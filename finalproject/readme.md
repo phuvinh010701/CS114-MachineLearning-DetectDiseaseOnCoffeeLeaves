@@ -57,14 +57,16 @@
 
     <p align="center">
     <img src="images/caphe.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-    <div style='text-align: center;'>Hình 1. Ảnh minh họa (Nguồn: Internet).</div>
+    <br>
+    <a style="text-align: center">Hình 1. Ảnh minh họa (Nguồn: Internet).</a>
     </p>
 
     * Theo báo điện tử VTV, trên 90% tổng sản lượng cà phê của Việt Nam dành cho việc xuất khẩu, khoảng 10% còn lại là dành cho việc chế biến và tiêu thụ trong nước. Cà phê nằm trong nhóm hàng nông sản xuất khẩu chủ lực của Việt Nam, hiện đứng thứ 2 thế giới (chỉ sau Brazil). Tính chung cả năm 2021, xuất khẩu cà phê của Việt Nam đạt 1,52 triệu tấn.
 
     <p align="center">
     <img src="images/bieudoxuatkhau.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-    <div style='text-align: center;'>Hình 2. Lượng cà phê xuất khẩu qua các tháng giai đoạn từ 2019-2021.</div>
+    <br>
+    <a style="text-align: center">Hình 2. Lượng cà phê xuất khẩu qua các tháng giai đoạn từ 2019-2021.</a>
     </p>
 
     * Sản lượng tuy lớn nhưng cà phê vẫn chưa đáp ứng được các tiêu chuẩn về chất lượng. Nhằm nâng cao chất lượng của hạt cà phê, việc phát hiện và xử lý những căn bệnh trên lá của cây rất quan trọng. Nhận thấy được vấn đề đó nên nhóm đã quyết định áp dụng những kiến thức của mình và những công nghệ trong lĩnh vực Machine Learning để giải quyết bài toán phát hiện một số loại bệnh trên lá cây cà phê.
@@ -78,8 +80,9 @@
         * Một tấm ảnh chụp chụp hình lá của cây cà phê đang bị bệnh.
 
         <p align="center">
-        <img src="images/viduinput.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-        <div style='text-align: center;'>Hình 3. Ví dụ về ảnh input thích hợp.</div>
+        <img src="images/viduinput.JPG" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+        <br>
+        <a style="text-align: center">Hình 3. Ví dụ về ảnh input thích hợp.</a>
         </p>
 
         * Các điều kiện ràng buộc :
@@ -99,7 +102,8 @@
 * Dữ liệu của bài toán đươc nhóm tự thu thập từ mốt số vườn chuyên trồng cà phê trên địa bàn huyện Lạc Dương và địa bàn thành phố Đà Lạt thuộc tỉnh Lâm Đồng. Trong quá trình thu thập dữ liệu, nhóm gặp nhiều khó khăn như việc di chuyển đến các vườn cà phê khá xa so với nhà riêng (khoảng hơn 20 km), dịch bệnh COVID-19 khiến cho việc đi qua các chốt phong tỏa khó khăn.
     <p align="center">
     <img src="images/vuoncaphetramhanh.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <div style='text-align: center;'>Hình 4. Vườn cà phê thuộc xã Trạm Hành, thành phố Đà Lạt, tỉnh Lâm Đồng.</div>
+    <br>
+    <a style="text-align: center">Hình 4. Vườn cà phê thuộc xã Trạm Hành, thành phố Đà Lạt, tỉnh Lâm Đồng.</a>
     </p>
 * Bộ dữ liệu về lá cây cà phê hiện nay chưa có ai thu thập nên số lượng dữ liệu mà nhóm có vẫn còn hạn chế do dữ liệu tự thu thập và xử lý. Mục đích của việc tự thu thập dữ liệu là để phù hợp với ngữ cảnh ứng dụng của bài toán.
 
