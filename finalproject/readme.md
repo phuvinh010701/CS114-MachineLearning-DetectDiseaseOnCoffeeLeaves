@@ -169,21 +169,86 @@
         <br>
         <a style="text-align: center">Hình 7. Công cụ labelImg.</a>
         </p>
+
+    * Sử dụng thao tác kéo thả chuột để tạo bouding box cho đối tượng. Label được lưu thành file text có cùng tên với ảnh dưới dạng YOLO format.
+            <p align="center">
+            <img src="images/yoloformat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+            <br>
+            <a style="text-align: center">Hình 8. Ảnh, label và label format của YOLO.</a>
+            </p>
+
+    * Số loại label là 4. Được kí hiệu bằng 1 trong các chữ số 0, 1, 2, 3
+
+    ***Label 0: Bệnh sâu vẽ bùa***
     
-    * Số loại label: 4
-
-    ***Label 0***
-
-* ### Thống số bộ dữ liệu : 
-    * Tập dữ liệu sẽ được chia thành hai tập train và test với tỉ lệ là 82% cho tập train và 18% cho tập test
-    <p algin="center">
-        <img src="images/data.png"/>
+    * Những lá bị sâu vẽ bùa gây hại sẽ bị co lại, biến dạng. Sâu non chui qua lớp biểu bì của lá để ăn phần nhu mô của lá tạo thành đường hầm ngoằn ngoèo màu trắng, trắng đục dưới lớp biểu bì.
+        
+    <p align="center">
+    <img src="images/vidusauvebua.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <br>
+    <a style="text-align: center">Hình 9. Một số ví dụ về bệnh sâu vẽ bùa trên lá cà phê.</a>
     </p>
-    0 : Sâu vẽ bùa <br>
-    1 : Phấn trắng <br>
-    2 : Nấm rỉ sắt <br>
-    3 : Đốm rong <br>
-**Nhận xét :** Số lương dữ liệu của bệnh đốm rong khá ít so với các bệnh khác.Một phần là do vườn của người thân ít xuất hiện bệnh này.Mặc khác các bệnh thường xảy ra theo mùa.
+
+    ***Label 1: Bệnh phấn trắng***
+    
+    * Bệnh phấn trắng do một số loại nấm có họ hàng gần gây ra. Triệu chứng chung là chúng tạo ra lớp bột có màu trắng xám trên bề mặt của lá.
+        
+    <p align="center">
+    <img src="images/viduphantrang.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <br>
+    <a style="text-align: center">Hình 10. Một số ví dụ về bệnh phấn trắng trên lá cà phê.</a>
+    </p>
+
+    ***Label 2: Bệnh nấm rỉ sắt***
+    
+    * Trên lá xuất hiện các vết đốm hình tròn màu nâu cam hơi đỏ (giống rỉ sắt), xung quanh có vầng màu vàng úa.
+        
+    <p align="center">
+    <img src="images/vidurisat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <br>
+    <a style="text-align: center">Hình 11. Một số ví dụ về bệnh nấm rỉ sắt trên lá cà phê.</a>
+    </p>
+
+    ***Label 3: Bệnh đốm rong***
+    
+    *  Đốm bệnh có hình tròn lúc đầu nhỏ khoảng 3 - 5 mm, hơi nhô lên trên mặt lá do rong phát triển thành ung mịn, màu hơi vàng.
+        
+    <p align="center">
+    <img src="images/vidudomrong.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <br>
+    <a style="text-align: center">Hình 12. Một số ví dụ về bệnh đốm rong trên lá cà phê.</a>
+    </p>
+
+* ### Thống số bộ dữ liệu :
+    * Tổng số lượng ảnh trong bộ dữ liệu là 3825 ảnh
+    * Tổng số object là 4092
+
+    <p align="center">
+    <img src="images/Figure_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <br>
+    <a style="text-align: center">Hình 13. Số lượng object thuộc từng loại label.</a>
+    </p>
+
+    
+    **Nhận xét :** Số lương label thuộc bệnh đốm rong khá ít so với các bệnh khác, nguyên nhân là bệnh này xuất hiện khá ít tại các vườn cà phê thu thập dữ liệu.
+
+    * Tập dữ liệu được chia thành hai tập train và test với tỉ lệ là 80% cho tập train và 20% cho tập test
+    <p align="center">
+    <img src="images/train.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+    <br>
+    <a style="text-align: center">Hình 14. Số lượng object thuộc từng loại label trong tập train.</a>
+    </p>
+    <p align="center">
+    <img src="images/test.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+    <br>
+    <a style="text-align: center">Hình 15. Số lượng object thuộc từng loại label trong tập test.</a>
+    </p>
+    
+    Trong đó: <br>
+        0 : Sâu vẽ bùa <br>
+        1 : Phấn trắng <br>
+        2 : Nấm rỉ sắt <br>
+        3 : Đốm rong <br>
 ## 3.Mô hình sử dụng:
 * Yolov4:
     * Giới thiệu: Vinh
