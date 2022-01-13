@@ -116,7 +116,7 @@
 * Một số kết quả nghiên cứu được đánh giá trên tập COCO. COCO (Common Objects in Context) là một tập datasets phục vụ cho các bài toán Object Detection, Segmentation, Image Captioning. Tập dữ liệu tổng cộng có khoảng 1.5 triệu object thuộc về 80 class khác nhau.
     <p align="center">
     <img src="images/perfomance_of_coco.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <a>Hình 5. Perfomance trên tập COCO.</a>
+    <a style="text-align: center">Hình 5. Perfomance trên tập COCO.</a>
     </p>
 # Chương 3. XÂY DỰNG BỘ DỮ LIỆU
 * ### Quá trình thu thập:
