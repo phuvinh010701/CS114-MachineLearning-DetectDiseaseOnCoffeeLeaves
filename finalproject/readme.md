@@ -77,7 +77,7 @@
     
     * Input:
         
-        * Một tấm ảnh chụp chụp hình lá của cây cà phê đang bị bệnh.
+        * Một tấm ảnh chụp hình lá của cây cà phê đang bị bệnh.
 
         <p align="center">
         <img src="images/viduinput.JPG" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
@@ -110,9 +110,9 @@
 # Chương 2. CÁC NGHIÊN CỨU TRƯỚC
 * Bài toán của nhóm đặt ra là muốn hướng đến bài toán thuộc loại Object Detection (Phát hiện đối tượng), định vị đối tượng trong ảnh và xác định đối tượng thuộc loại nào. Trong lĩnh vực thị giác máy tính thì bài toàn phát hiện đối tượng đạt được nhiều kết quả khi áp dụng hướng tiếp cận Deep learning. Có thể kể đến một số hướng tiếp cận tiên tiến hiện nay bao gồm RCNN, Fast RCNN, Faster RCNN, Mask RCNN, RetinaNet, YOLO, v.v
 * Faster RCNN
-    * Phương pháp Faster RCNN là một trong các phương pháp phát hiện đối tƣợng sử dụng mạng Deep learning đạt độ chính xác cao trên các tập dữ liệu chuẩn như COCO . Faster RCNN đƣợc cải tiến dựa trên 2 phương pháp trướcc đó là RCNN và Fast RCNN.
+    * Phương pháp Faster RCNN là một trong các phương pháp phát hiện đối tƣợng sử dụng mạng Deep learning đạt độ chính xác cao trên các tập dữ liệu chuẩn như COCO . Faster RCNN được cải tiến dựa trên 2 phương pháp trướcc đó là RCNN và Fast RCNN.
 * Mask RCNN
-    * Phương pháp Mask RCNN là phương pháp thực hiện song song 2 bài toán là phân vùng đối tượng (Instance Segmentation) và phát hiện đối tượng. Mask RCNN là phương pháp đƣợc cải tiến từ Faster RCNN.
+    * Phương pháp Mask RCNN là phương pháp thực hiện song song 2 bài toán là phân vùng đối tượng (Instance Segmentation) và phát hiện đối tượng. Mask RCNN là phương pháp được cải tiến từ Faster RCNN.
 * Restinanet
     * RetinaNet là một phƣơng pháp tiếp cận one-stage tức là ngay trong bản thân cấu trúc mạng của phƣơng pháp đã bao gồm thao tác đưa ra vùng đề xuất
 * YOLO
@@ -125,16 +125,34 @@
     </p>
 # Chương 3. XÂY DỰNG BỘ DỮ LIỆU
 * ### Quá trình thu thập:
-    * Dữ liệu được nhóm thu thập thủ công bằng điện thoại.Thu thập thủ công tại vườn giúp bộ dữ liệu gần sát với thực tế khi người nông dân tiến hành chụp.Sau đó nhóm tiến hành gắn nhãn cho bộ dữ liệu.
+    * Dữ liệu được nhóm thu thập thủ công bằng camera của điện thoại.
+    * Điện thoại sử dụng: Iphone 7 Plus, 32GB.
+    * Mỗi tấm ảnh gốc có kích thước 3024 x 4032, 4032 x 3024
+
+        <p align="center">
+        <img src="images/details_image.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+        <br>
+        <a style="text-align: center">Hình 6. Độ phân giải và camera sử dụng.</a>
+        </p>
+
+    * Thời gian thu thập dữ liệu:
+<center>
+
+| STT | Thời gian thu thập | Địa điểm thu thập |
+| :---: | --- | --- |
+| 1 | 20/12/2021 | Huyện Lạc Dương |
+| 2 | 25/12/2021 | Xã Trạm Hành |
+| 3 | 1/2/2022 | Xã Trạm Hành |
+
+</center>
+
 * ### Tiêu chí khi thu thập dữ liệu :
-    * Chụp toàn bộ chiếc lá
-    * Đảm bộ độ sáng phù hợp
-    * khoảng cách chụp vừa phải
-    * Gốc camera từ trên xuống
-* ### Nơi thu thập dữ liệu :
-    * Vườn cà phê của nhà người thân xa khoảng 40km
-* ### Khó khắn khi thu thập dữ liệu : 
-    * Đường đi xa xôi.Hiện nay dịch bệnh vẫn còn ảnh hưởng nên có rất nhiều khó khăn trong việc đi lại và có thể gây ảnh hưởng đến sức khỏe
+
+    * Chụp rõ nét tập trung vào lá cây bị bệnh
+    * Chụp mặt trên của lá cây
+    * Chụp toàn bộ chiếc lá từ phần cuốn lá đến chóp lá
+    * Đảm bảo ánh sáng ban ngày
+    
 * ### Tổng quan về bộ dữ liệu :
     * Bộ dữ liệu gồm có 3825 tấm ảnh gồm bốn lớp là bốn loại bệnh phổ biến xuất hiện trên lá cây cà phê
     * Bốn loại bệnh : 
