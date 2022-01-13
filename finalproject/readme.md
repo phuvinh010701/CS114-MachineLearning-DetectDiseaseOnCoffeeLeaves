@@ -243,15 +243,27 @@
     <br>
     <a style="text-align: center">Hình 15. Số lượng object thuộc từng loại label trong tập test.</a>
     </p>
-    
+
     Trong đó: <br>
         0 : Sâu vẽ bùa <br>
         1 : Phấn trắng <br>
         2 : Nấm rỉ sắt <br>
         3 : Đốm rong <br>
-## 3.Mô hình sử dụng:
-* Yolov4:
-    * Giới thiệu: Vinh
+# Chương 4. TRAINING VÀ ĐÁNH GIÁ MODEL
+## Cấu hình train và test:
+<p align="center">
+<img src="images/cauhinhtrain.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%"/>
+<br>
+<a style="text-align: center">Hình 16. Cấu hình dùng để train và test.</a>
+</p>
+
+## Yolov4:
+<p align="center">
+<img src="images/yolov4_archi.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
+<br>
+<a style="text-align: center">Hình 16. Cấu trúc mô hình YOLOv4.</a>
+</p>
+
 * Yolov5:
     * Giới thiệu: Danh or Vinh or Minh
 * Faster-RCNN:
