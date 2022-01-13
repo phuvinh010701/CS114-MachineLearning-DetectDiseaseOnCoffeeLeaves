@@ -47,7 +47,9 @@
 
 7.[Tài liệu tham khảo](#Tài-liệu-tham-khảo:)
 
-## 1.Giới thiệu bài toán:
+# Chương 1. TỔNG QUAN
+
+## 1.1 Mô tả bài toán
 
 * Ngữ cảnh ứng dụng : 
     
@@ -55,15 +57,17 @@
 
     <p align="center">
     <img src="images/caphe.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+    <div style='text-align: center;'>Hình 1. Ảnh minh họa (Nguồn: Internet).</div>
     </p>
 
     * Theo báo điện tử VTV, trên 90% tổng sản lượng cà phê của Việt Nam dành cho việc xuất khẩu, khoảng 10% còn lại là dành cho việc chế biến và tiêu thụ trong nước. Cà phê nằm trong nhóm hàng nông sản xuất khẩu chủ lực của Việt Nam, hiện đứng thứ 2 thế giới (chỉ sau Brazil). Tính chung cả năm 2021, xuất khẩu cà phê của Việt Nam đạt 1,52 triệu tấn.
 
     <p align="center">
     <img src="images/bieudoxuatkhau.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+    <div style='text-align: center;'>Hình 2. Lượng cà phê xuất khẩu qua các tháng giai đoạn từ 2019-2021.</div>
     </p>
 
-    * Sản lượng tuy lớn nhưng cà phê vẫn chưa đáp ứng được các tiêu chuẩn về chất lượng. Nhằm nâng cao chất lượng của hạt cà phê, việc phát hiện và xử lý những căn bệnh trên lá của cây rất quan trọng. Nhận thấy được vấn đề đó nên nhóm đã quyết định áp dụng những kiến thức của mình và những công nghệ có sẵn hiện nay để giải quyết bài toán phát hiện một số loại bệnh trên lá cây cà phê.
+    * Sản lượng tuy lớn nhưng cà phê vẫn chưa đáp ứng được các tiêu chuẩn về chất lượng. Nhằm nâng cao chất lượng của hạt cà phê, việc phát hiện và xử lý những căn bệnh trên lá của cây rất quan trọng. Nhận thấy được vấn đề đó nên nhóm đã quyết định áp dụng những kiến thức của mình và những công nghệ trong lĩnh vực Machine Learning để giải quyết bài toán phát hiện một số loại bệnh trên lá cây cà phê.
 
     * Mô hình hướng tới người sử dụng là người trồng cây cà phê, xây dựng một ứng dụng có thể giúp người trồng có thể phát hiện chính xác hơn các loại bệnh đang gặp trên lá của cây và đưa ra được giải pháp phù hợp nhằm loại bỏ bệnh và tác nhân gây bệnh. 
     
@@ -72,6 +76,12 @@
     * Input:
         
         * Một tấm ảnh chụp chụp hình lá của cây cà phê đang bị bệnh.
+
+        <p align="center">
+        <img src="images/viduinput.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+        <div style='text-align: center;'>Hình 3. Ví dụ về ảnh input thích hợp.</div>
+        </p>
+
         * Các điều kiện ràng buộc :
             + Ảnh chụp tập trung vào lá đang bị bệnh
             + Chụp mặt trên của lá
@@ -84,7 +94,31 @@
         * Tên loại bệnh
     <br>
     🠊 Trong ứng dụng thực tế hoàn chỉnh, dựa vào tên loại bệnh xác định được ứng dụng sẽ đưa ra các giải pháp phù hợp cho người trồng
-## 2.Bộ dữ liệu:
+
+## 1.2 Mô tả dữ liệu
+* Dữ liệu của bài toán đươc nhóm tự thu thập từ mốt số vườn chuyên trồng cà phê trên địa bàn huyện Lạc Dương và địa bàn thành phố Đà Lạt thuộc tỉnh Lâm Đồng. Trong quá trình thu thập dữ liệu, nhóm gặp nhiều khó khăn như việc di chuyển đến các vườn cà phê khá xa so với nhà riêng (khoảng hơn 20 km), dịch bệnh COVID-19 khiến cho việc đi qua các chốt phong tỏa khó khăn.
+    <p align="center">
+    <img src="images/vuoncaphetramhanh.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <div style='text-align: center;'>Hình 4. Vườn cà phê thuộc xã Trạm Hành, thành phố Đà Lạt, tỉnh Lâm Đồng.</div>
+    </p>
+* Bộ dữ liệu về lá cây cà phê hiện nay chưa có ai thu thập nên số lượng dữ liệu mà nhóm có vẫn còn hạn chế do dữ liệu tự thu thập và xử lý. Mục đích của việc tự thu thập dữ liệu là để phù hợp với ngữ cảnh ứng dụng của bài toán.
+
+# Chương 2. CÁC NGHIÊN CỨU TRƯỚC
+* Bài toán của nhóm đặt ra là muốn hướng đến bài toán thuộc loại Object Detection (Phát hiện đối tượng), định vị đối tượng trong ảnh và xác định đối tượng thuộc loại nào. Trong lĩnh vực thị giác máy tính thì bài toàn phát hiện đối tượng đạt được nhiều kết quả khi áp dụng hướng tiếp cận Deep learning. Có thể kể đến một số hướng tiếp cận tiên tiến hiện nay bao gồm RCNN, Fast RCNN, Faster RCNN, Mask RCNN, RetinaNet, YOLO, v.v
+* Faster RCNN
+    * Phương pháp Faster RCNN là một trong các phương pháp phát hiện đối tƣợng sử dụng mạng Deep learning đạt độ chính xác cao trên các tập dữ liệu chuẩn như COCO . Faster RCNN đƣợc cải tiến dựa trên 2 phương pháp trướcc đó là RCNN và Fast RCNN.
+* Mask RCNN
+    * Phương pháp Mask RCNN là phương pháp thực hiện song song 2 bài toán là phân vùng đối tượng (Instance Segmentation) và phát hiện đối tượng. Mask RCNN là phương pháp đƣợc cải tiến từ Faster RCNN.
+* Restinanet
+    * RetinaNet là một phƣơng pháp tiếp cận one-stage tức là ngay trong bản thân cấu trúc mạng của phƣơng pháp đã bao gồm thao tác đưa ra vùng đề xuất
+* YOLO
+    * YOLO được xem là phương pháp đầu tiên xử lý dữ liệu theo thời gian thực và vẫn đạt được độ chính xác cao.
+* Một số kết quả nghiên cứu được đánh giá trên tập COCO. COCO (Common Objects in Context) là một tập datasets phục vụ cho các bài toán Object Detection, Segmentation, Image Captioning. Tập dữ liệu tổng cộng có khoảng 1.5 triệu object thuộc về 80 class khác nhau.
+    <p align="center">
+    <img src="images/perfomance_of_coco.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <a>Hình 5. Perfomance trên tập COCO.</a>
+    </p>
+# Chương 3. XÂY DỰNG BỘ DỮ LIỆU
 * ### Quá trình thu thập:
     * Dữ liệu được nhóm thu thập thủ công bằng điện thoại.Thu thập thủ công tại vườn giúp bộ dữ liệu gần sát với thực tế khi người nông dân tiến hành chụp.Sau đó nhóm tiến hành gắn nhãn cho bộ dữ liệu.
 * ### Tiêu chí khi thu thập dữ liệu :
