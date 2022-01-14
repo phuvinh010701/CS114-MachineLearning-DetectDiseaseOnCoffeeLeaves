@@ -172,7 +172,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
             </p>
 
     * Trong một ảnh có thể có nhiều lá những chỉ label những lá bị bệnh và thấy rõ từ cuốn lá đến chóp lá.
-    
+
     * Số loại label là 4. Được kí hiệu bằng 1 trong các chữ số 0, 1, 2, 3
 
     ***Label 0: Bệnh sâu vẽ bùa***
@@ -340,18 +340,77 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
     * yolov4-custom_last.weights (Trọng số của interation mới nhất)
     * yolov4-custom_best.weights (Trọng số tốt nhất)
 * Quá trình training khá lâu vượt qua thời gian cho phép của Google Colab nên ở những lần train tiếp theo nhóm tiến hành train tiếp trên file trọng số mới nhất
-* Thời gian train model: khoảng 18 tiếng
+* Thời gian train model: khoảng 28 tiếng
 * Thời gian test trên 686 ảnh: 53 giây 
 
-### Model Summary
+## YOLOv5:
+
+### Sơ lược về YOLOv5
+* Không lâu sau khi YOLOv4 được phát hành chính thức thì 1 phiên bản khác của YOLO xuất hiện là YOLOv5 sử dụng frame work Pytorch. Với những số liệu của tác giả cung cấp thì mô hình này khá triển vọng. Tuy nhiên YOLOv4 hiện vẫn chưa có paper chính thức.
+
+<p align="center">
+<img src="images/yolov5_coco.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
+<br>
+<a style="text-align: center">Hình 24. Perfomance của các phiên bản YOLOv5 trên tập COCO</a>
+</p>
+
+<p align="center">
+<img src="images/pre_check.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
+<br>
+<a style="text-align: center">Hình 25. Kết quả đánh giá trên tập COCO</a>
+</p>
+
+* Từ những kết quả mà tác giả đưa ra có thể thấy YOLOv5 có thể đạt tới 68.9% mAP0.5 trên tập COCO.
+
+### Thiết lập training
+* Tạo file data.yaml có nội dung như sau
+<p align="center">
+<img src="images/data_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
+<br>
+<a style="text-align: center">Hình 26. File data.yaml</a>
+</p>
+
+    Trong đó:
+    names: lần lượt là tên của các label được đặt trong dấu ngoặc kép
+    nc: số lượng class
+    train: đường dẫn tới các file ảnh train
+    valid: đường dẫn tới các file ảnh dùng để valid trong quá trình train
+
+* Thiết lập training
+    * batch: 32
+    * img size: 416
+    * epoch: 500
+
+### Train model
+* Tải file trọng số của model YOLOv5s và tiến hành train trên file trọng số này.
+* Trong quá trình train model các file trọng số được lưu lại tronng đó có 2 file quan trọng là:
+    * last.pt (Trọng số của epoch mới nhất)
+    * best.pt (Trọng số tốt nhất)
+* Quá trình training khá lâu vượt qua thời gian cho phép của Google Colab nên ở những lần train tiếp theo nhóm tiến hành train tiếp trên file trọng số mới nhất
+* Vào epoch 450 thì xuất hiện thông báo dừng train model như sau:
+<p align="center">
+<img src="images/stopping.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<br>
+<a style="text-align: center">Hình 27. Early stopping YOLOv5</a>
+</p>
+
+* Do trong 100 epoch gần nhất thì model không còn tốt lên được nữa (model hội tụ) nên tự động dừng train.
+* Thời gian train model: khoảng 8 tiếng
+* Thời gian test trên 686 ảnh: 32 giây
+
+## Faster-RCNN:
 
 
-### YOLOv5:
+## Đánh giá model
 
+* Thiết lập các ngưỡng để đánh giá
+    * confidence thresh: 0.25
+    * iou thresh: 0.5
 
-### Faster-RCNN:
-
-
+| Model | Precision | Recall | mAP0.5 |
+| :---: | --- | --- | --- |
+| YOLOv4 | 0.90 | 0.98 | 0.989 |
+| YOLOv5s | 0.988 | 0.99 | 0.995 |
 ## Chướng 5. Ứng dụng và hướng phát triển:
 
 ## Tài liệu tham khảo:
