@@ -406,10 +406,27 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 * Thiết lập các ngưỡng để đánh giá
     * confidence thresh: 0.25
     * iou thresh: 0.5
+* YOLOv4
+
+| Class | mAP0.5 |
+| :---: | --- | 
+| 0 | 1.000 | 
+| 1 | 0.984 |
+| 2 | 0.988 |
+| 3 | 0.986 |
+
+* YOLOv5
+
+| Class | mAP0.5 |
+| :---: | --- | 
+| 0 | 0.995 | 
+| 1 | 0.99 |
+| 2 | 0.992 |
+| 3 | 0.994 |
 
 | Model | Precision | Recall | mAP0.5 |
 | :---: | --- | --- | --- |
-| YOLOv4 | 0.90 | 0.98 | 0.989 |
+| YOLOv4 | 0.900 | 0.98 | 0.989 |
 | YOLOv5s | 0.988 | 0.99 | 0.995 |
 ## Chướng 5. Ứng dụng và hướng phát triển:
 
