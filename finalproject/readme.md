@@ -407,8 +407,13 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
     * confidence thresh: 0.25
     * iou thresh: 0.5
 * YOLOv4
+<p align="center">
+<img src="images/res_yolov4.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/>
+<br>
+<a style="text-align: center">Hình 28. Kết quả đánh giá model YOLOv4</a>
+</p>
 
-| Class | mAP0.5 |
+| Class | mAP@0.5 |
 | :---: | --- | 
 | 0 | 1.000 | 
 | 1 | 0.984 |
@@ -416,15 +421,22 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 | 3 | 0.986 |
 
 * YOLOv5
+<p align="center">
+<img src="images/res_yolov5.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
+<br>
+<a style="text-align: center">Hình 29. Kết quả đánh giá model YOLOv5s</a>
+</p>
 
-| Class | mAP0.5 |
+| Class | mAP@0.5 |
 | :---: | --- | 
 | 0 | 0.995 | 
 | 1 | 0.99 |
 | 2 | 0.992 |
 | 3 | 0.994 |
 
-| Model | Precision | Recall | mAP0.5 |
+* Faster RCNN
+
+| Model | Precision | Recall | mAP@0.5 |
 | :---: | --- | --- | --- |
 | YOLOv4 | 0.900 | 0.98 | 0.989 |
 | YOLOv5s | 0.988 | 0.99 | 0.995 |
