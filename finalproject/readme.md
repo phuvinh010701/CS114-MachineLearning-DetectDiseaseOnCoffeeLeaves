@@ -486,7 +486,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 
 | Class | YOLOv4 | YOLOv5 | Faster RCNN |
 | :---: | --- | --- | --- |
-| 0 | <u>0.987 </u> | | |
+| 0 | <ins>0.987 </ins> | | |
 | 1 | 0.997 | | |
 | 2 | 0.999 | | |
 | 3 | 0.998 | | |
