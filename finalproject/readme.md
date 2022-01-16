@@ -507,7 +507,51 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 | Faster-RCNN | 175 |
 
 🠊 Khi thử nghiệm trên cùng một cấu hình, mặc dù Faster RCNN cho kết quả mAP@0.5 tốt nhất nhưng cũng tốn thời gian nhiều nhất so với 2 model còn lại.
+* Một số hình ảnh test
+<p align="center">
+<img src="images/1.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<br>
+<a style="text-align: center">Hình 35. Kết quả test</a>
+</p>
 
+    Model YOLOv4 và YOLOv5 detect sai 1 phần lá bị bệnh đốm rong ở góc trên bên trái
+
+<p align="center">
+<img src="images/2.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<br>
+<a style="text-align: center">Hình 36. Kết quả test</a>
+</p>
+
+    YOLOv5 detect sai loại bệnh (Ground truth là nấm rỉ sắt - Predict đốm rong)
+
+<p align="center">
+<img src="images/3.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<br>
+<a style="text-align: center">Hình 37. Kết quả test</a>
+</p>
+
+    YOLOv5 detect 1 lá bình thường ở góc trên thành bệnh sâu vẽ bùa
+
+<p align="center">
+<img src="images/4.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<br>
+<a style="text-align: center">Hình 38. Kết quả test</a>
+</p>
+
+    Cả ba model đều cho kết quả chính xác khi detect được 2 lá bị bệnh.
+
+<p align="center">
+<img src="images/5.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<br>
+<a style="text-align: center">Hình 39. Kết quả test</a>
+</p>
+
+    YOLOv4 cho kết quả chính xác, Faster RCNN và YOLOv5 detect sai 1 là bình thường ở bên trái thành bệnh sâu vẽ bùa
+
+* Nhìn chung kết quả thử nghiệm đều khá tốt.
+    * Một số lá bình thường bị detect nhầm thành bệnh sâu vẽ bùa và nấm rỉ sắt do 1 số ảnh trong tập train bệnh còn nhẹ và khá giống với lá bình thường
+    * Một số lá bị nấm rỉ sắt nhìn khá giống với bệnh đốm rong làm cho model bị nhầm lẫn.
+    * YOLOv4 và YOLOv5 đều có những trường hợp detect ra 1 phần lá bị bệnh. Trường hợp này xảy ra nhiều hơn đối với model YOLOv5 
 ## Chướng 5. Ứng dụng và hướng phát triển:
 
 ### Ứng dụng:
@@ -517,5 +561,4 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 ### Hướng phát triển:
 * Thu thập thêm nhiều dữ liệu về các loại bệnh nhằm giúp ứng dụng phát hiện được nhiều loại bệnh và chính xác hơn.
 * Có thể hướng tới việc phát hiện các loại bệnh trên nhiều loại lá cây nông nghiệp khác nhau dựa trên các đặc điểm giống nhau của các loại bệnh khi xuất hiện trên lá.
-## Tài liệu tham khảo:
-Danh & Vinh
+
