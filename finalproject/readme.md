@@ -447,7 +447,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 <a style="text-align: center">Hình 32. Kết quả đánh giá model YOLOv4</a>
 </p>
 
-| Class | mAP@0.5 |
+| Class | AP@0.5 |
 | :---: | --- | 
 | 0 | 1.000 | 
 | 1 | 0.984 |
@@ -461,7 +461,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 <a style="text-align: center">Hình 33. Kết quả đánh giá model YOLOv5s</a>
 </p>
 
-| Class | mAP@0.5 |
+| Class | AP@0.5 |
 | :---: | --- | 
 | 0 | 0.995 | 
 | 1 | 0.99 |
@@ -475,7 +475,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 <a style="text-align: center">Hình 34. Kết quả đánh giá model Faster RCNN (AP ở đây là mAP@0.5)</a>
 </p>
 
-| Class | mAP@0.5 |
+| Class | AP@0.5 |
 | :---: | --- | 
 | 0 | 0.987 | 
 | 1 | 0.997 |
@@ -484,20 +484,38 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 
 * Tổng kết đánh giá
 
-| Class | YOLOv4 | YOLOv5 | Faster RCNN |
-| :---: | --- | --- | --- |
-| 0 | <ins>0.987 </ins> | | |
-| 1 | 0.997 | | |
-| 2 | 0.999 | | |
-| 3 | 0.998 | | |
-
+| Model\Class | 0 | 1 | 2 | 3|
+| :---: | --- | --- | --- | --- |
+| YOLOv4 | <ins>1.000 </ins> | 0.984| 0.988 | 0.986 |
+| YOLOv5 | 0.995 | 0.99| 0.992 | 0.994 |
+| Faster RCNN | 0.987 | <ins> 0.997 <ins>| <ins>0.999</ins> | <ins>0.998 </ins>|
+    
+🠊 Khi đánh giá bằng điểm AP@0.5, đối với class 0 model YOLOv4 cho kết quả cao nhất. Đối với 3 class còn lại, Faster RCNN đều cho kết quả tốt hơn
 
 | Model | Precision | Recall | mAP@0.5 |
 | :---: | --- | --- | --- |
 | YOLOv4 | 0.900 | 0.98 | 0.989 |
-| YOLOv5s | 0.988 | 0.99 | 0.993 |
-| Faster-RCNN | 0.996 | 0.958 | 0.996 |
+| YOLOv5s | 0.988 | <ins>0.99</ins> | 0.993 |
+| Faster-RCNN | <ins>0.996 </ins> | 0.958 | <ins>0.996</ins> |
+
+🠊 Khi đánh giá bằng mAP@0.5 cả 3 model đều cho kết quả rất tốt. Faster RCNN cho kết quả tốt nhất.
+
+| Model | Thời gian test 687 ảnh (giây) | 
+| :---: | --- | 
+| YOLOv4 | 53 | 
+| YOLOv5s | 32 | 
+| Faster-RCNN | 175 |
+
+🠊 Khi thử nghiệm trên cùng một cấu hình, mặc dù Faster RCNN cho kết quả mAP@0.5 tốt nhất nhưng cũng tốn thời gian nhiều nhất so với 2 model còn lại.
+
 ## Chướng 5. Ứng dụng và hướng phát triển:
 
+### Ứng dụng:
+* Ứng dụng hướng tới người sử dụng chính là người trồng cà phê, giúp người trồng có thể phát hiện được các loại bệnh xuất hiện trên lá từ đó có thể xử lý đúng cách và hiệu quả.
+* Như đã đề cập trước đó, việc giúp người trồng cà phê phát hiện được bệnh xuất hiện trên lá sẽ góp phần nâng cao được chất lượng sản phẩm cà phê, đáp ứng được các tiêu chuẩn về hàng xuất khẩu từ đó nguồn thu nhập của người dân sẽ được tăng lên. Việc sử các mô hình máy học sẽ thúc đẩy quá trình ứng dụng khoa học kĩ thuật vào trong nông nghiệp.
+
+### Hướng phát triển:
+* Thu thập thêm nhiều dữ liệu về các loại bệnh nhằm giúp ứng dụng phát hiện được nhiều loại bệnh và chính xác hơn.
+* Có thể hướng tới việc phát hiện các loại bệnh trên nhiều loại lá cây nông nghiệp khác nhau dựa trên các đặc điểm giống nhau của các loại bệnh khi xuất hiện trên lá.
 ## Tài liệu tham khảo:
 Danh & Vinh
