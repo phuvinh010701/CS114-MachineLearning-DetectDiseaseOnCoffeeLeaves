@@ -106,7 +106,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 # Chương 2. CÁC NGHIÊN CỨU TRƯỚC
 * Bài toán của nhóm đặt ra là muốn hướng đến bài toán thuộc loại Object Detection (Phát hiện đối tượng), định vị đối tượng trong ảnh và xác định đối tượng thuộc loại nào. Trong lĩnh vực thị giác máy tính thì bài toàn phát hiện đối tượng đạt được nhiều kết quả khi áp dụng hướng tiếp cận Deep learning. Có thể kể đến một số hướng tiếp cận tiên tiến hiện nay bao gồm RCNN, Fast RCNN, Faster RCNN, Mask RCNN, RetinaNet, YOLO, v.v
 * Faster RCNN
-    * Phương pháp Faster RCNN là một trong các phương pháp phát hiện đối tƣợng sử dụng mạng Deep learning đạt độ chính xác cao trên các tập dữ liệu chuẩn như COCO . Faster RCNN được cải tiến dựa trên 2 phương pháp trướcc đó là RCNN và Fast RCNN.
+    * Phương pháp Faster RCNN là một trong các phương pháp phát hiện đối tượng sử dụng mạng Deep learning đạt độ chính xác cao trên các tập dữ liệu chuẩn như COCO . Faster RCNN được cải tiến dựa trên 2 phương pháp trướcc đó là RCNN và Fast RCNN.
 * Mask RCNN
     * Phương pháp Mask RCNN là phương pháp thực hiện song song 2 bài toán là phân vùng đối tượng (Instance Segmentation) và phát hiện đối tượng. Mask RCNN là phương pháp được cải tiến từ Faster RCNN.
 * Restinanet
@@ -546,7 +546,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 <a style="text-align: center">Hình 39. Kết quả test</a>
 </p>
 
-    YOLOv4 cho kết quả chính xác, Faster RCNN và YOLOv5 detect sai 1 là bình thường ở bên trái thành bệnh sâu vẽ bùa
+    YOLOv4 cho kết quả chính xác, Faster RCNN và YOLOv5 detect sai 1 lá bình thường ở bên trái thành bệnh sâu vẽ bùa
 
 * Nhìn chung kết quả thử nghiệm đều khá tốt.
     * Một số lá bình thường bị detect nhầm thành bệnh sâu vẽ bùa và nấm rỉ sắt do 1 số ảnh trong tập train bệnh còn nhẹ và khá giống với lá bình thường
