@@ -32,17 +32,6 @@
 [4]:https://www.facebook.com/phuvinh0107
 [5]:https://www.facebook.com/tuanminh.vo.73
 
-## Bảng mục lục
-
-Chương 1.[Tổng quan](#tổng-quan)
-
-Chương 2.[Các nghiên cứu trước](#xây-dựng-bộ-dữ-liệu:)
-
-Chương 3.[Xây dựng bộ dữ liệu](#mô-hình-sử-dụng:)
-
-Chương 4.[Training và đánh giá model](#phương-pháp-đánh-giá:)
-
-Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 
 # Chương 1. TỔNG QUAN
 
@@ -106,7 +95,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 # Chương 2. CÁC NGHIÊN CỨU TRƯỚC
 * Bài toán của nhóm đặt ra là muốn hướng đến bài toán thuộc loại Object Detection (Phát hiện đối tượng), định vị đối tượng trong ảnh và xác định đối tượng thuộc loại nào. Trong lĩnh vực thị giác máy tính thì bài toàn phát hiện đối tượng đạt được nhiều kết quả khi áp dụng hướng tiếp cận Deep learning. Có thể kể đến một số hướng tiếp cận tiên tiến hiện nay bao gồm RCNN, Fast RCNN, Faster RCNN, Mask RCNN, RetinaNet, YOLO, v.v
 * Faster RCNN
-    * Phương pháp Faster RCNN là một trong các phương pháp phát hiện đối tượng sử dụng mạng Deep learning đạt độ chính xác cao trên các tập dữ liệu chuẩn như COCO . Faster RCNN được cải tiến dựa trên 2 phương pháp trướcc đó là RCNN và Fast RCNN.
+    * Phương pháp Faster RCNN là một trong các phương pháp phát hiện đối tƣợng sử dụng mạng Deep learning đạt độ chính xác cao trên các tập dữ liệu chuẩn như COCO . Faster RCNN được cải tiến dựa trên 2 phương pháp trướcc đó là RCNN và Fast RCNN.
 * Mask RCNN
     * Phương pháp Mask RCNN là phương pháp thực hiện song song 2 bài toán là phân vùng đối tượng (Instance Segmentation) và phát hiện đối tượng. Mask RCNN là phương pháp được cải tiến từ Faster RCNN.
 * Restinanet
@@ -412,6 +401,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 
 ## Faster-RCNN:
 ### Sơ lược về Faster RCNN
+* Faster-RCNN được giới thiệu bởi Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun.Trong bài báo [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497)
 * Faster-RCNN  là một phương pháp phát hiện đối tượng sử dụng deep learning.Faster RCNN là một sự cải tiến dựa trên hai phương pháp  trước đó là RCNN và Fast RCNN. Faster RCNN là sự kết hợp giữa Fast-RCNN với  một mạng mới có tên gọi là region proposal network(rpn).
 * Region Proposal Netwok là một mạng Convolutional Neural Network(CNN) có chức năng để tìm ra các vùng có khả năng chứa đối tượng thường dược gọi là region proposal
 * Fast-RCNN là một mạng CNN dùng để trích xuất các features từ các region proposal và trả ra các bounding box cùng với label cho từng cái bounding box đó.
@@ -437,6 +427,36 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 * Thời gian train của Faster RCNN: 12 tiếng
 * Thời gian test trên 687 ảnh: 175 giây
 ## Đánh giá model
+* Để đánh giá model thì nhóm sử dụng mean average precision để đánh giá model.Trước tiên để hiểu được mean average là gì thì trước tiên chúng tôi sẽ giới thiệu một số khái niệm cơ bản.
+* IOU là tỷ lệ giữa phần giao của bounding box dự đoán vói ground truth(vùng đối tượng thật mà chúng tôi label) và phần hợp của chúng.
+<p align="center">
+  <img src="images/ctiou.png" width="500" height="400">
+</p>
+
+* Giá trị IOU trong khoảng (0,1).Dựa vào đó có thể xác định được wrong detection hay correct detection.Dựa vào ngưỡng để xác định.Nếu IOU lớn hơn hoặc bằng ngưỡng thì đó là một correct detection còn lại thì là wrong detection.
+
+* Dựa vào những khái niệm trên để định nghĩa True/false positive/negative.
+
+  * True Positive (TP): IoU lớn hơn hoặc bằng ngưỡng, là một correct detection
+  
+  * False Positive (FP): IoU bé hơn ngưỡng, là một wrong detection
+  
+  * False Negative (FN): trường hợp mà ground truth không có predicted bounding box
+
+* Nêu có nhiều predicted bounding box xếp chồng lên nhau trong cùng một ground truth thì ta sẽ chọn predicted bounding box nào có IOU lớn hơn ngưỡng cao nhất là True Positive,còn lại là False Positive.
+
+<p align="center">
+  <img src="images/AP.jpg" width="500" height="400">
+</p>
+* AP là diện tích màu xanh nằm dưới đường cong.
+* Mỗi lớp bài toán sẽ có một giá trị AP,Mean Average Precision là trung bình AP cho tất cả các lớp.
+
+* **Lý do chọn mean average precision là metric để đánh giá mô hình :** 
+  
+  * Mối quan hệ giữa precision – recall giúp mAP đánh giá được về độ chính xác của mô hình.
+  
+  * Precision – Recall thay đổi khi ngưỡng IoU thay đổi.Do đó, tại một giá trị IoU xác định,ta có thể do/đánh giá được mô hình một cách tốt nhất.
+
 * Thiết lập các ngưỡng để đánh giá
     * confidence thresh: 0.25
     * iou thresh: 0.5
@@ -472,7 +492,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 <p align="center">
 <img src="images/fasterrcnn_res.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
 <br>
-<a style="text-align: center">Hình 34. Kết quả đánh giá model Faster RCNN (AP ở đây là mAP@0.5)</a>
+<a style="text-align: center">Hình 34. Kết quả đánh giá model Faster RCNN</a>
 </p>
 
 | Class | AP@0.5 |
@@ -546,7 +566,7 @@ Chương 5.[Ứng dụng và hướng phát triển](#đánh-giá-kết-quả:)
 <a style="text-align: center">Hình 39. Kết quả test</a>
 </p>
 
-    YOLOv4 cho kết quả chính xác, Faster RCNN và YOLOv5 detect sai 1 lá bình thường ở bên trái thành bệnh sâu vẽ bùa
+    YOLOv4 cho kết quả chính xác, Faster RCNN và YOLOv5 detect sai 1 là bình thường ở bên trái thành bệnh sâu vẽ bùa
 
 * Nhìn chung kết quả thử nghiệm đều khá tốt.
     * Một số lá bình thường bị detect nhầm thành bệnh sâu vẽ bùa và nấm rỉ sắt do 1 số ảnh trong tập train bệnh còn nhẹ và khá giống với lá bình thường
