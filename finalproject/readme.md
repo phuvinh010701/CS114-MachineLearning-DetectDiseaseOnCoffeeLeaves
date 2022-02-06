@@ -32,13 +32,16 @@
 [4]:https://www.facebook.com/phuvinh0107
 [5]:https://www.facebook.com/tuanminh.vo.73
 
+# Chương 0. Giải trình chỉnh sửa sau vấn đáp
+## Cách để đánh giá mô hình:
+* Nhóm đã tiến hành cập nhật về đánh gía mô hình và cách xác định True Positive, False Positive sau những góp ý của thầy. Lý do chọn mean average precision là metric để đánh giá. [Link](#Đánh-giá-model)
+## Số lượng số lượng sai sót của mỗi class trong mỗi mô hình:
+* Nhóm tiến hành thống kê True Positive, False Positive của mỗi class trong mỗi mô hình để tiến hành xác định số lượng. [Link](#Số-lượng-sai-sót-của-mỗi-class)
 
 # Chương 1. TỔNG QUAN
 
 ## 1.1 Mô tả bài toán
-
 * Ngữ cảnh ứng dụng : 
-    
     * Hiện nay, cà phê là một trong những loại thức uống được sử dụng phổ biến lẫn trong và ngoài nước. Cà phê được sản xuất từ những hạt cà phê rang, lấy trên cây cà phê.
 
     <p align="center">
@@ -411,9 +414,10 @@
 <p align="center">Hình 30. Cấu trúc Faster RCNN</p>
 
 ### Thiếp lập training
-* Nhóm sử dụn detectron2 một thư viện của Facebook AI Research để tiến hành huấn luyện cho Faster RCNN.Nhóm đã sử dụng file pretrained weights X-101-32x8d.pkl để tiếp tục train cho model của mình.
+* Nhóm sử dụn detectron2 một thư viện của Facebook AI Research để tiến hành huấn luyện cho Faster RCNN. Nhóm đã sử dụng file pretrained weights X-101-32x8d.pkl để tiếp tục train cho model của mình.
+
 <p align="center">
-  <img src="images/faster_yaml.png" /> 
+  <img src="images/faster_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/> 
 </p>
 <p align="center">Hình 31. File pretrained được sử dụng </p>
 
@@ -426,14 +430,15 @@
 ### Train model
 * Thời gian train của Faster RCNN: 12 tiếng
 * Thời gian test trên 687 ảnh: 175 giây
-## Đánh giá model
-* Để đánh giá model thì nhóm sử dụng mean average precision để đánh giá model.Trước tiên để hiểu được mean average là gì thì trước tiên chúng tôi sẽ giới thiệu một số khái niệm cơ bản.
+### Đánh giá model
+* Để đánh giá model thì nhóm sử dụng mean average precision để đánh giá model. Trước tiên để hiểu được mean average là gì thì trước tiên chúng tôi sẽ giới thiệu một số khái niệm cơ bản.
 * IOU là tỷ lệ giữa phần giao của bounding box dự đoán vói ground truth(vùng đối tượng thật mà chúng tôi label) và phần hợp của chúng.
 <p align="center">
   <img src="images/ctiou.png" width="500" height="400">
 </p>
+<p align="center">Hình 32. Độ đo IOU </p>
 
-* Giá trị IOU trong khoảng (0,1).Dựa vào đó có thể xác định được wrong detection hay correct detection.Dựa vào ngưỡng để xác định.Nếu IOU lớn hơn hoặc bằng ngưỡng thì đó là một correct detection còn lại thì là wrong detection.
+* Giá trị IOU trong khoảng (0,1). Dựa vào đó có thể xác định được wrong detection hay correct detection. Dựa vào ngưỡng để xác định. Nếu IOU lớn hơn hoặc bằng ngưỡng thì đó là một correct detection còn lại thì là wrong detection.
 
 * Dựa vào những khái niệm trên để định nghĩa True/false positive/negative.
 
@@ -443,19 +448,21 @@
   
   * False Negative (FN): trường hợp mà ground truth không có predicted bounding box
 
-* Nêu có nhiều predicted bounding box xếp chồng lên nhau trong cùng một ground truth thì ta sẽ chọn predicted bounding box nào có IOU lớn hơn ngưỡng cao nhất là True Positive,còn lại là False Positive.
+* Nêu có nhiều predicted bounding box xếp chồng lên nhau trong cùng một ground truth thì ta sẽ chọn predicted bounding box nào có IOU lớn hơn ngưỡng cao nhất là True Positive, còn lại là False Positive.
 
 <p align="center">
   <img src="images/AP.jpg" width="500" height="400">
 </p>
+<p align="center">Hình 33. AP </p>
+
 * AP là diện tích màu xanh nằm dưới đường cong.
-* Mỗi lớp bài toán sẽ có một giá trị AP,Mean Average Precision là trung bình AP cho tất cả các lớp.
+* Mỗi lớp bài toán sẽ có một giá trị AP, Mean Average Precision là trung bình AP cho tất cả các lớp.
 
 * **Lý do chọn mean average precision là metric để đánh giá mô hình :** 
   
   * Mối quan hệ giữa precision – recall giúp mAP đánh giá được về độ chính xác của mô hình.
   
-  * Precision – Recall thay đổi khi ngưỡng IoU thay đổi.Do đó, tại một giá trị IoU xác định,ta có thể do/đánh giá được mô hình một cách tốt nhất.
+  * Precision – Recall thay đổi khi ngưỡng IoU thay đổi. Do đó, tại một giá trị IoU xác định,ta có thể do/đánh giá được mô hình một cách tốt nhất.
 
 * Thiết lập các ngưỡng để đánh giá
     * confidence thresh: 0.25
@@ -464,7 +471,7 @@
 <p align="center">
 <img src="images/res_yolov4.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/>
 <br>
-<a style="text-align: center">Hình 32. Kết quả đánh giá model YOLOv4</a>
+<a style="text-align: center">Hình 34. Kết quả đánh giá model YOLOv4</a>
 </p>
 
 | Class | AP@0.5 |
@@ -478,7 +485,7 @@
 <p align="center">
 <img src="images/res_yolov5.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
 <br>
-<a style="text-align: center">Hình 33. Kết quả đánh giá model YOLOv5s</a>
+<a style="text-align: center">Hình 35. Kết quả đánh giá model YOLOv5s</a>
 </p>
 
 | Class | AP@0.5 |
@@ -492,7 +499,7 @@
 <p align="center">
 <img src="images/fasterrcnn_res.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
 <br>
-<a style="text-align: center">Hình 34. Kết quả đánh giá model Faster RCNN</a>
+<a style="text-align: center">Hình 36. Kết quả đánh giá model Faster RCNN</a>
 </p>
 
 | Class | AP@0.5 |
@@ -512,11 +519,37 @@
     
 🠊 Khi đánh giá bằng điểm AP@0.5, đối với class 0 model YOLOv4 cho kết quả cao nhất. Đối với 3 class còn lại, Faster RCNN đều cho kết quả tốt hơn
 
+<p align="center">
+<img src="images/results_pre.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+<br>
+<a style="text-align: center">Hình 37. Detection result</a>
+</p>
+
+### Số lượng sai sót của mỗi class:
+* Qua hình ta có thể thấy được số lượng sai sót mỗi thông qua việc đánh giá bằng AP@50
+
+| Model | Class| True Positive | False Positive |
+| :----: | :-----: | :------: | :-----: |
+| YOLOv4 | class0 | 217 | 5 |
+|        | class1 | 60 | 7 |
+|        | class2 | 250 | 44 |
+|        | class3 | 187 | 25 |
+| YOLOv5 | class0 | 217 | 17 |
+|        | class1 | 63 | 26 |
+|        | class2 | 257 | 57|
+|        | class3 | 188 | 25 |
+| FasterRCNN | class0 | 217 | 5 |
+|            | class1 | 63 | 5 |
+|            | class2 | 258 | 14 |
+|            | class3 | 186 | 4 |
+
+* Qua bảng thông kê trên ta có thể thấy model FasterRCNN có số lượng False Positive thấp nhất và số lượng False Positive của model YOLOv5 cao nhất điều đó đòng nghĩa với việc model YOLOv5 có nhiều sai sót hơn 2 model còn lại.
+
 | Model | Precision | Recall | mAP@0.5 |
 | :---: | --- | --- | --- |
 | YOLOv4 | 0.900 | 0.98 | 0.989 |
 | YOLOv5s | 0.988 | <ins>0.99</ins> | 0.993 |
-| Faster-RCNN | <ins>0.996 </ins> | 0.958 | <ins>0.996</ins> |
+| Faster-RCNN | <ins>0.996 </ins> | 0.997 | <ins>0.996</ins> |
 
 🠊 Khi đánh giá bằng mAP@0.5 cả 3 model đều cho kết quả rất tốt. Faster RCNN cho kết quả tốt nhất.
 
@@ -529,41 +562,41 @@
 🠊 Khi thử nghiệm trên cùng một cấu hình, mặc dù Faster RCNN cho kết quả mAP@0.5 tốt nhất nhưng cũng tốn thời gian nhiều nhất so với 2 model còn lại.
 * Một số hình ảnh test
 <p align="center">
-<img src="images/1.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<img src="images/1.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 35. Kết quả test</a>
+<a style="text-align: center">Hình 38. Kết quả test</a>
 </p>
 
     Model YOLOv4 và YOLOv5 detect sai 1 phần lá bị bệnh đốm rong ở góc trên bên trái
 
 <p align="center">
-<img src="images/2.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<img src="images/2.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 36. Kết quả test</a>
+<a style="text-align: center">Hình 39. Kết quả test</a>
 </p>
 
     YOLOv5 detect sai loại bệnh (Ground truth là nấm rỉ sắt - Predict đốm rong)
 
 <p align="center">
-<img src="images/3.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<img src="images/3.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 37. Kết quả test</a>
+<a style="text-align: center">Hình 40. Kết quả test</a>
 </p>
 
     YOLOv5 detect 1 lá bình thường ở góc trên thành bệnh sâu vẽ bùa
 
 <p align="center">
-<img src="images/4.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<img src="images/4.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 38. Kết quả test</a>
+<a style="text-align: center">Hình 41. Kết quả test</a>
 </p>
 
     Cả ba model đều cho kết quả chính xác khi detect được 2 lá bị bệnh.
 
 <p align="center">
-<img src="images/5.png" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<img src="images/5.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 39. Kết quả test</a>
+<a style="text-align: center">Hình 42. Kết quả test</a>
 </p>
 
     YOLOv4 cho kết quả chính xác, Faster RCNN và YOLOv5 detect sai 1 là bình thường ở bên trái thành bệnh sâu vẽ bùa
