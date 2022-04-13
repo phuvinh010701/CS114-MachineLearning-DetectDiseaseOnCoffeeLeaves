@@ -34,13 +34,14 @@
 
 # Chương 0. Giải trình chỉnh sửa sau vấn đáp
 ## Cách để đánh giá mô hình:
-* Nhóm đã tiến hành cập nhật về đánh gía mô hình và cách xác định True Positive, False Positive sau những góp ý của thầy. Lý do chọn mean average precision là metric để đánh giá. [Link](#Đánh-giá-model)
+* Nhóm đã tiến hành cập nhật về đánh giá mô hình và cách xác định True Positive, False Positive sau những góp ý của thầy. Lý do chọn mean average precision là metric để đánh giá. [link](#46-đánh-giá-model)
 ## Số lượng số lượng sai sót của mỗi class trong mỗi mô hình:
-* Nhóm tiến hành thống kê True Positive, False Positive của mỗi class trong mỗi mô hình để tiến hành xác định số lượng. [Link](#Số-lượng-sai-sót-của-mỗi-class)
-
+* Nhóm tiến hành thống kê True Positive ,False Positive của mỗi class trong mỗi mô hình để tiến hành xác định số lượng. [link](#462-kết-quả-đánh-giá)
+## Định dạng của dataset dùng để tranning model:
+* Nhóm đã tiến hành tìm hiểu và xác định nội dung dataset dùng để trainning model. [link](#41-nội-dung-dataset)
 # Chương 1. TỔNG QUAN
 
-## 1.1 Mô tả bài toán
+## 1.1. Mô tả bài toán
 * Ngữ cảnh ứng dụng : 
     * Hiện nay, cà phê là một trong những loại thức uống được sử dụng phổ biến lẫn trong và ngoài nước. Cà phê được sản xuất từ những hạt cà phê rang, lấy trên cây cà phê.
 
@@ -86,7 +87,7 @@
     <br>
     🠊 Trong ứng dụng thực tế hoàn chỉnh, dựa vào tên loại bệnh xác định được ứng dụng sẽ đưa ra các giải pháp phù hợp cho người trồng
 
-## 1.2 Mô tả dữ liệu
+## 1.2. Mô tả dữ liệu
 * Dữ liệu của bài toán đươc nhóm tự thu thập từ mốt số vườn chuyên trồng cà phê trên địa bàn huyện Lạc Dương và địa bàn thành phố Đà Lạt thuộc tỉnh Lâm Đồng. Trong quá trình thu thập dữ liệu, nhóm gặp nhiều khó khăn như việc di chuyển đến các vườn cà phê khá xa so với nhà riêng (khoảng hơn 20 km), dịch bệnh COVID-19 khiến cho việc đi qua các chốt phong tỏa khó khăn.
     <p align="center">
     <img src="images/vuoncaphetramhanh.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
@@ -112,20 +113,21 @@
     <a style="text-align: center">Hình 5. Perfomance trên tập COCO.</a>
     </p>
 # Chương 3. XÂY DỰNG BỘ DỮ LIỆU
-* ### Quá trình thu thập:
-    * Dữ liệu được nhóm thu thập thủ công bằng camera của điện thoại.
-    * Điện thoại sử dụng: Iphone 7 Plus, 32GB.
-    * Mỗi tấm ảnh gốc có kích thước 3024 x 4032 (camera nằm ngang), 4032 x 3024 (camera nằm dọc)
+## 3.1. Quá trình thu thập:
 
-        <p align="center">
-        <img src="images/details_image.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-        <br>
-        <a style="text-align: center">Hình 6. Độ phân giải và camera sử dụng.</a>
-        </p>
+* Dữ liệu được nhóm thu thập thủ công bằng camera của điện thoại.
+* Điện thoại sử dụng: Iphone 7 Plus, 32GB.
+* Mỗi tấm ảnh gốc có kích thước 3024 x 4032 (camera nằm ngang), 4032 x 3024 (camera nằm dọc)
 
-    * File ảnh được lưu trữ trong cùng 1 folder trên máy tính dưới dạng tệp .JPG
+    <p align="center">
+    <img src="images/details_image.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <br>
+    <a style="text-align: center">Hình 6. Độ phân giải và camera sử dụng.</a>
+    </p>
 
-    * Thời gian thu thập dữ liệu:
+* File ảnh được lưu trữ trong cùng 1 folder trên máy tính dưới dạng tệp .JPG
+
+* Thời gian thu thập dữ liệu:
 
 <center>
 
@@ -137,139 +139,155 @@
 </center>
 
 
-* ### Tiêu chí khi thu thập dữ liệu :
+## 3.2. Tiêu chí khi thu thập dữ liệu :
 
-    * Chụp rõ nét tập trung vào lá cây bị bệnh.
-    * Chụp toàn bộ chiếc lá từ phần cuốn lá đến chóp lá.
-    * Đảm bảo ánh sáng ban ngày.
+* Chụp rõ nét tập trung vào lá cây bị bệnh.
+* Chụp toàn bộ chiếc lá từ phần cuốn lá đến chóp lá.
+* Đảm bảo ánh sáng ban ngày.
     
-* ### Giảm độ phân giải của ảnh :
+## 3.3. Giảm độ phân giải của ảnh :
 
-    * Do mỗi ảnh có kích thước khá lớn nên dung lượng lưu trữ khá nặng. Đối với folder chứa toàn bộ dữ liệu gốc nặng khoảng 11.2 Gb gây khó khăn trong việc lưu trữ nến nhóm đã giảm độ phân giải xuống ~ 3.33 lần. Độ phân giải sau khi giảm 907 x 1209 và 1209 x 907. Dung lượng lưu trữ sau khi xử lý nặng khoảng 1.6 Gb.
+* Do mỗi ảnh có kích thước khá lớn nên dung lượng lưu trữ khá nặng. Đối với folder chứa toàn bộ dữ liệu gốc nặng khoảng 11.2 Gb gây khó khăn trong việc lưu trữ nến nhóm đã giảm độ phân giải xuống ~ 3.33 lần. Độ phân giải sau khi giảm 907 x 1209 và 1209 x 907. Dung lượng lưu trữ sau khi xử lý nặng khoảng 1.6 Gb.
 
 
-* ### Gán nhãn dữ liệu :
+## 3.4. Gán nhãn dữ liệu :
 
-    * Sử dụng công cụ labelImg để tiến hành gán nhãn toàn bộ dữ liệu
+* Sử dụng công cụ labelImg để tiến hành gán nhãn toàn bộ dữ liệu
+    <p align="center">
+    <img src="images/label.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/>
+    <br>
+    <a style="text-align: center">Hình 7. Công cụ labelImg.</a>
+    </p>
+
+* Sử dụng thao tác kéo thả chuột để tạo bouding box cho đối tượng. Label được lưu thành file text có cùng tên với ảnh dưới dạng YOLO format.
         <p align="center">
-        <img src="images/label.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/>
+        <img src="images/yoloformat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
         <br>
-        <a style="text-align: center">Hình 7. Công cụ labelImg.</a>
+        <a style="text-align: center">Hình 8. Ảnh, label và label format của YOLO.</a>
         </p>
 
-    * Sử dụng thao tác kéo thả chuột để tạo bouding box cho đối tượng. Label được lưu thành file text có cùng tên với ảnh dưới dạng YOLO format.
-            <p align="center">
-            <img src="images/yoloformat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-            <br>
-            <a style="text-align: center">Hình 8. Ảnh, label và label format của YOLO.</a>
-            </p>
+* Trong một ảnh có thể có nhiều lá những chỉ label những lá bị bệnh và thấy rõ từ cuốn lá đến chóp lá.
 
-    * Trong một ảnh có thể có nhiều lá những chỉ label những lá bị bệnh và thấy rõ từ cuốn lá đến chóp lá.
+* Số loại label là 4. Được kí hiệu bằng 1 trong các chữ số 0, 1, 2, 3
 
-    * Số loại label là 4. Được kí hiệu bằng 1 trong các chữ số 0, 1, 2, 3
+***Label 0: Bệnh sâu vẽ bùa***
 
-    ***Label 0: Bệnh sâu vẽ bùa***
+* Những lá bị sâu vẽ bùa gây hại sẽ bị co lại, biến dạng. Sâu non chui qua lớp biểu bì của lá để ăn phần nhu mô của lá tạo thành đường hầm ngoằn ngoèo màu trắng, trắng đục dưới lớp biểu bì.
     
-    * Những lá bị sâu vẽ bùa gây hại sẽ bị co lại, biến dạng. Sâu non chui qua lớp biểu bì của lá để ăn phần nhu mô của lá tạo thành đường hầm ngoằn ngoèo màu trắng, trắng đục dưới lớp biểu bì.
-        
-    <p align="center">
-    <img src="images/vidusauvebua.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <br>
-    <a style="text-align: center">Hình 9. Một số ví dụ về bệnh sâu vẽ bùa trên lá cà phê.</a>
-    </p>
+<p align="center">
+<img src="images/vidusauvebua.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<br>
+<a style="text-align: center">Hình 9. Một số ví dụ về bệnh sâu vẽ bùa trên lá cà phê.</a>
+</p>
 
-    ***Label 1: Bệnh phấn trắng***
+***Label 1: Bệnh phấn trắng***
+
+* Bệnh phấn trắng do một số loại nấm có họ hàng gần gây ra. Triệu chứng chung là chúng tạo ra lớp bột có màu trắng xám trên bề mặt của lá.
     
-    * Bệnh phấn trắng do một số loại nấm có họ hàng gần gây ra. Triệu chứng chung là chúng tạo ra lớp bột có màu trắng xám trên bề mặt của lá.
-        
-    <p align="center">
-    <img src="images/viduphantrang.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <br>
-    <a style="text-align: center">Hình 10. Một số ví dụ về bệnh phấn trắng trên lá cà phê.</a>
-    </p>
+<p align="center">
+<img src="images/viduphantrang.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<br>
+<a style="text-align: center">Hình 10. Một số ví dụ về bệnh phấn trắng trên lá cà phê.</a>
+</p>
 
-    ***Label 2: Bệnh nấm rỉ sắt***
+***Label 2: Bệnh nấm rỉ sắt***
+
+* Trên lá xuất hiện các vết đốm hình tròn màu nâu cam hơi đỏ (giống rỉ sắt), xung quanh có vầng màu vàng úa.
     
-    * Trên lá xuất hiện các vết đốm hình tròn màu nâu cam hơi đỏ (giống rỉ sắt), xung quanh có vầng màu vàng úa.
-        
-    <p align="center">
-    <img src="images/vidurisat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <br>
-    <a style="text-align: center">Hình 11. Một số ví dụ về bệnh nấm rỉ sắt trên lá cà phê.</a>
-    </p>
+<p align="center">
+<img src="images/vidurisat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<br>
+<a style="text-align: center">Hình 11. Một số ví dụ về bệnh nấm rỉ sắt trên lá cà phê.</a>
+</p>
 
-    ***Label 3: Bệnh đốm rong***
+***Label 3: Bệnh đốm rong***
+
+*  Đốm bệnh có hình tròn lúc đầu nhỏ khoảng 3 - 5 mm, hơi nhô lên trên mặt lá do rong phát triển thành ung mịn, màu hơi vàng.
     
-    *  Đốm bệnh có hình tròn lúc đầu nhỏ khoảng 3 - 5 mm, hơi nhô lên trên mặt lá do rong phát triển thành ung mịn, màu hơi vàng.
-        
-    <p align="center">
-    <img src="images/vidudomrong.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <br>
-    <a style="text-align: center">Hình 12. Một số ví dụ về bệnh đốm rong trên lá cà phê.</a>
-    </p>
+<p align="center">
+<img src="images/vidudomrong.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<br>
+<a style="text-align: center">Hình 12. Một số ví dụ về bệnh đốm rong trên lá cà phê.</a>
+</p>
 
-* ### Thống số bộ dữ liệu :
-    * Tổng số lượng ảnh trong bộ dữ liệu là: 3825 ảnh
-    * Tổng số object là: 4092
+## 3.5. Thống số bộ dữ liệu :
+* Tổng số lượng ảnh trong bộ dữ liệu là: 3825 ảnh
+* Tổng số object là: 4092
 
-    <p align="center">
-    <img src="images/Figure_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <br>
-    <a style="text-align: center">Hình 13. Số lượng object thuộc từng loại label.</a>
-    </p>
+<p align="center">
+<img src="images/Figure_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<br>
+<a style="text-align: center">Hình 13. Số lượng object thuộc từng loại label.</a>
+</p>
 
-    * Số ảnh có 1 object là: 3579
-    * Số ảnh có nhiều hơn 1 object là: 246
+* Số ảnh có 1 object là: 3579
+* Số ảnh có nhiều hơn 1 object là: 246
 
-    <p align="center">
-    <img src="images/Figure_count.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
-    <br>
-    <a style="text-align: center">Hình 14. Số lượng ảnh có 1 object và nhiều object.</a>
-    </p>
-    
-    **Nhận xét :** Số lượng object thuộc bệnh phấn trắng khá ít so với các bệnh khác, nguyên nhân là bệnh này xuất hiện khá ít tại các vườn cà phê thu thập dữ liệu.
+<p align="center">
+<img src="images/Figure_count.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<br>
+<a style="text-align: center">Hình 14. Số lượng ảnh có 1 object và nhiều object.</a>
+</p>
 
-    * Tập dữ liệu được chia thành hai tập train và test với tỉ lệ là 80% cho tập train và 20% cho tập test
-    <p align="center">
-    <img src="images/train.png" style="display: block;margin-left: auto;margin-right: auto;"/>
-    <br>
-    <a style="text-align: center">Hình 15. Số lượng object thuộc từng loại label trong tập train.</a>
-    </p>
-    <p align="center">
-    <img src="images/test.png" style="display: block;margin-left: auto;margin-right: auto;"/>
-    <br>
-    <a style="text-align: center">Hình 16. Số lượng object thuộc từng loại label trong tập test.</a>
-    </p>
+**Nhận xét :** Số lượng object thuộc bệnh phấn trắng khá ít so với các bệnh khác, nguyên nhân là bệnh này xuất hiện khá ít tại các vườn cà phê thu thập dữ liệu.
 
-    Trong đó: <br>
-        0 : Sâu vẽ bùa <br>
-        1 : Phấn trắng <br>
-        2 : Nấm rỉ sắt <br>
-        3 : Đốm rong <br>
+* Tập dữ liệu được chia thành hai tập train và test với tỉ lệ là 80% cho tập train và 20% cho tập test
+<p align="center">
+<img src="images/train.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+<br>
+<a style="text-align: center">Hình 15. Số lượng object thuộc từng loại label trong tập train.</a>
+</p>
+<p align="center">
+<img src="images/test.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+<br>
+<a style="text-align: center">Hình 16. Số lượng object thuộc từng loại label trong tập test.</a>
+</p>
+
+Trong đó: <br>
+    0 : Sâu vẽ bùa <br>
+    1 : Phấn trắng <br>
+    2 : Nấm rỉ sắt <br>
+    3 : Đốm rong <br>
+* Dataset được tổ chức lưu trữ trên roboflow. Sử dụng code để tải dataset về trong quá trình train và test.
 # Chương 4. TRAINING VÀ ĐÁNH GIÁ MODEL
-## Cấu hình train và test:
-Để train model nhóm sử dụng tài nguyên của Google Colab với thiết lập runtime type là GPU
+## 4.1. Nội dung dataset:
+### 4.1.1. YOLO:
+* Đối với các model YOLO thì trong tập dataset sẽ gồm các file ảnh và các file *.txt ứng với mỗi tấm ảnh.
+* Nội dung của file txt: mỗi object được biểu diễn bằng 1 dòng \<object-class> \<x> \<y> \<width> \<height>
+    * Trong đó \<object-class> là số nguyên trong đoạn [0, 3]
+    * \<x> \<y> \<width> \<height> là các số thực được chuẩn hóa có giá trị nằm trong đoạn [0, 1], biểu diễn bouding box của đối tượng.
+    <p align="center">
+    <img src="images/yoloformat.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
+    <br>
+    <a style="text-align: center">Hình 17. Cách tính các giá trị x, y, width, height.</a>
+    </p>
+### 4.1.2. Faster-RCNN:
+* Đối với Faster-RCNN nhóm sử dụng roboflow để tự chuyển đổi từ định dạng YOLO darknet format sang COCO json format.
 
+## 4.2. Cấu hình train và test:
+Để train model nhóm sử dụng tài nguyên của Google Colab với thiết lập runtime type là GPU
+da
 <p align="center">
 <img src="images/runtime.png" style="display: block;margin-left: auto;margin-right: auto; width: 30%; height:30%"/>
 <br>
-<a style="text-align: center">Hình 17. Bật GPU trên Google Colab.</a>
+<a style="text-align: center">Hình 18. Bật GPU trên Google Colab.</a>
 </p>
 
 <p align="center">
 <img src="images/cauhinhtrain.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%"/>
 <br>
-<a style="text-align: center">Hình 18. Cấu hình dùng để train và test.</a>
+<a style="text-align: center">Hình 19. Cấu hình dùng để train và test.</a>
 </p>
 
-## YOLOv4:
+## 4.3. YOLOv4:
+
+### 4.3.1. Sơ lược về YOLOv4
+
 <p align="center">
 <img src="images/yolov4_archi.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
-<a style="text-align: center">Hình 19. Cấu trúc mô hình YOLOv4.</a>
+<a style="text-align: center">Hình 20. Cấu trúc mô hình YOLOv4.</a>
 </p>
-
-### Sơ lược về YOLOv4
 
 * YOLOv4 được giới thiệu bởi Alexey Bochoknovskiy, Chien-Yao Wang, and Hong-Yuan Mark Liao trong bài báo [YOLOv4: Optimal Speed and Accuracy of Object Detection](https://arxiv.org/abs/2004.10934v1) xuất bản ngày 23/4/2020.
 
@@ -278,19 +296,19 @@
 <p align="center">
 <img src="images/yolov4_compare.jpeg" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
-<a style="text-align: center">Hình 20. So sánh YOLOv4 với các mô hình khác.</a>
+<a style="text-align: center">Hình 21. So sánh YOLOv4 với các mô hình khác.</a>
 </p>
 
 * Kết quả so sánh YOLOv4 với các mô hình khác ở thời điểm hiện tại. YOLOv4 chạy nhanh gấp đôi EfficientDet và tăng AP và FPS so với YOLOv3 lần lượt là 10% và 12%. Hình ảnh từ paper YOLOv4. Nhìn vào biểu đồ, ta dễ dàng thấy được sự hiệu quả của YOLOv4 so với các mạng tốt nhất hiện nay. Cụ thể hơn YOLOv4 đạt 43.5% AP trên tập dữ liệu MS COCO ở tốc độ 65 FPS, trên GPU Tesla V100. 
 
-### Thiết lập training
+### 4.3.2 Thiết lập training
 
 
 * Nhóm sử dụng darknet repository của tác giả để huấn luyện cho model và thiết lập các thông số trong file Makefile như sau
 <p align="center">
 <img src="images/configmakefile.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
-<a style="text-align: center">Hình 21. Thiết lập các thông số Makefile để sử dụng GPU.</a>
+<a style="text-align: center">Hình 22. Thiết lập các thông số Makefile để sử dụng GPU.</a>
 </p>
 
 * Chỉnh sửa các thông số của model YOLOv4 trong file yolov4-custom.cfg theo hướng dẫn của tác giả:
@@ -306,7 +324,7 @@
 <p align="center">
 <img src="images/path_train.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
-<a style="text-align: center">Hình 22. File train.txt</a>
+<a style="text-align: center">Hình 23. File train.txt</a>
 </p>
 
 
@@ -314,21 +332,21 @@
 <p align="center">
 <img src="images/path_valid.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
-<a style="text-align: center">Hình 23. File valid.txt</a>
+<a style="text-align: center">Hình 24. File valid.txt</a>
 </p>
 
 * Tạo file obj.names chứa tên của các class
 <p align="center">
 <img src="images/obj.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
-<a style="text-align: center">Hình 24. File obj.names</a>
+<a style="text-align: center">Hình 25. File obj.names</a>
 </p>
 
 * Tạo file obj.data có nội dung như sau
 <p align="center">
 <img src="images/obj_data.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
-<a style="text-align: center">Hình 25. File obj.data</a>
+<a style="text-align: center">Hình 26. File obj.data</a>
 </p>
 
     Trong đó:
@@ -338,40 +356,40 @@
     names: đường dẫn tới file obj.names
     backup: đường dẫn tới folder backup chứa các trọng số được lưu lại trong quá trình train
 
-### Train model
+### 4.3.3. Train model
 * Tải file trọng số yolov4.conv.137.weights và tiến hành train trên file trọng số này
-* Trong quá trình train model các file trọng số được lưu lại tronng đó có 2 file quan trọng là:
+* Trong quá trình train model các file trọng số được lưu lại trong đó có 2 file quan trọng là:
     * yolov4-custom_last.weights (Trọng số của interation mới nhất)
     * yolov4-custom_best.weights (Trọng số tốt nhất)
 * Quá trình training khá lâu vượt qua thời gian cho phép của Google Colab nên ở những lần train tiếp theo nhóm tiến hành train tiếp trên file trọng số mới nhất
 * Thời gian train model: khoảng 28 tiếng
 * Thời gian test trên 687 ảnh: 53 giây 
 
-## YOLOv5:
+## 4.4. YOLOv5:
 
-### Sơ lược về YOLOv5
-* Không lâu sau khi YOLOv4 được phát hành chính thức thì 1 phiên bản khác của YOLO xuất hiện là YOLOv5 sử dụng frame work Pytorch. YOLOv5 được giới thiệu bởi Glenn Jocher vào ngày 18/5/2020, YOLOv5 có mã nguồn mở ở [Github](https://github.com/ultralytics/yolov5). Với những số liệu của tác giả cung cấp thì mô hình này khá triển vọng. Tuy nhiên YOLOv4 hiện vẫn chưa có paper chính thức.
+### 4.4.1. Sơ lược về YOLOv5
+* Không lâu sau khi YOLOv4 được phát hành chính thức thì 1 phiên bản khác của YOLO xuất hiện là YOLOv5 sử dụng frame work Pytorch. YOLOv5 được giới thiệu bởi Glenn Jocher vào ngày 18/5/2020, YOLOv5 có mã nguồn mở ở [Github](https://github.com/ultralytics/yolov5). Với những số liệu của tác giả cung cấp thì mô hình này khá triển vọng. Tuy nhiên YOLOv5 hiện vẫn chưa có paper chính thức.
 
 <p align="center">
 <img src="images/yolov5_coco.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
-<a style="text-align: center">Hình 26. Perfomance của các phiên bản YOLOv5 trên tập COCO</a>
+<a style="text-align: center">Hình 27. Perfomance của các phiên bản YOLOv5 trên tập COCO</a>
 </p>
 
 <p align="center">
 <img src="images/pre_check.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
-<a style="text-align: center">Hình 27. Kết quả đánh giá trên tập COCO</a>
+<a style="text-align: center">Hình 28. Kết quả đánh giá trên tập COCO</a>
 </p>
 
 * Từ những kết quả mà tác giả đưa ra có thể thấy YOLOv5 có thể đạt tới 68.9% mAP0.5 trên tập COCO.
 
-### Thiết lập training
+### 4.4.2. Thiết lập training
 * Tạo file data.yaml có nội dung như sau
 <p align="center">
 <img src="images/data_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
-<a style="text-align: center">Hình 28. File data.yaml</a>
+<a style="text-align: center">Hình 29. File data.yaml</a>
 </p>
 
     Trong đó:
@@ -385,7 +403,7 @@
     * img size: 416
     * epoch: 500
 
-### Train model
+### 4.4.3. Train model
 * Tải file trọng số của model YOLOv5s và tiến hành train trên file trọng số này.
 * Trong quá trình train model các file trọng số được lưu lại tronng đó có 2 file quan trọng là:
     * last.pt (Trọng số của epoch mới nhất)
@@ -395,15 +413,15 @@
 <p align="center">
 <img src="images/stopping.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
 <br>
-<a style="text-align: center">Hình 29. Early stopping YOLOv5</a>
+<a style="text-align: center">Hình 30. Early stopping YOLOv5</a>
 </p>
 
 * Do trong 100 epoch gần nhất thì model không còn tốt lên được nữa (model hội tụ) nên tự động dừng train.
 * Thời gian train model: khoảng 8 tiếng
 * Thời gian test trên 687 ảnh: 32 giây
 
-## Faster-RCNN:
-### Sơ lược về Faster RCNN
+## 4.5. Faster-RCNN:
+### 4.5.1. Sơ lược về Faster RCNN
 * Faster-RCNN được giới thiệu bởi Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun.Trong bài báo [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497)
 * Faster-RCNN  là một phương pháp phát hiện đối tượng sử dụng deep learning.Faster RCNN là một sự cải tiến dựa trên hai phương pháp  trước đó là RCNN và Fast RCNN. Faster RCNN là sự kết hợp giữa Fast-RCNN với  một mạng mới có tên gọi là region proposal network(rpn).
 * Region Proposal Netwok là một mạng Convolutional Neural Network(CNN) có chức năng để tìm ra các vùng có khả năng chứa đối tượng thường dược gọi là region proposal
@@ -411,15 +429,15 @@
 <p align="center">
   <img src="images/faster.png" />
 </p>
-<p align="center">Hình 30. Cấu trúc Faster RCNN</p>
+<p align="center">Hình 31. Cấu trúc Faster RCNN</p>
 
-### Thiếp lập training
+### 4.5.2. Thiếp lập training
 * Nhóm sử dụn detectron2 một thư viện của Facebook AI Research để tiến hành huấn luyện cho Faster RCNN. Nhóm đã sử dụng file pretrained weights X-101-32x8d.pkl để tiếp tục train cho model của mình.
 
 <p align="center">
   <img src="images/faster_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/> 
 </p>
-<p align="center">Hình 31. File pretrained được sử dụng </p>
+<p align="center">Hình 32. File pretrained được sử dụng </p>
 
 * Thiết lập thông sô:
   * BATCH_SIZE_PER_IMAGE = 64
@@ -427,16 +445,18 @@
   * MAX_ITER : 15000
   * STEP_SIZE : 6000,10000
 * Nhóm chỉ chỉnh sửa một vài thông số để tiến hành việc training.
-### Train model
+### 4.5.3. Train model
 * Thời gian train của Faster RCNN: 12 tiếng
 * Thời gian test trên 687 ảnh: 175 giây
-### Đánh giá model
+
+## 4.6 Đánh giá model
+### 4.6.1. Metric đánh giá
 * Để đánh giá model thì nhóm sử dụng mean average precision để đánh giá model. Trước tiên để hiểu được mean average là gì thì trước tiên chúng tôi sẽ giới thiệu một số khái niệm cơ bản.
 * IOU là tỷ lệ giữa phần giao của bounding box dự đoán vói ground truth(vùng đối tượng thật mà chúng tôi label) và phần hợp của chúng.
 <p align="center">
   <img src="images/ctiou.png" width="500" height="400">
 </p>
-<p align="center">Hình 32. Độ đo IOU </p>
+<p align="center">Hình 33. Độ đo IOU </p>
 
 * Giá trị IOU trong khoảng (0,1). Dựa vào đó có thể xác định được wrong detection hay correct detection. Dựa vào ngưỡng để xác định. Nếu IOU lớn hơn hoặc bằng ngưỡng thì đó là một correct detection còn lại thì là wrong detection.
 
@@ -453,17 +473,18 @@
 <p align="center">
   <img src="images/AP.jpg" width="500" height="400">
 </p>
-<p align="center">Hình 33. AP </p>
+<p align="center">Hình 34. AP </p>
 
 * AP là diện tích màu xanh nằm dưới đường cong.
 * Mỗi lớp bài toán sẽ có một giá trị AP, Mean Average Precision là trung bình AP cho tất cả các lớp.
 
-* **Lý do chọn mean average precision là metric để đánh giá mô hình :** 
+* **🠊Lý do chọn mean average precision là metric để đánh giá mô hình :** 
   
   * Mối quan hệ giữa precision – recall giúp mAP đánh giá được về độ chính xác của mô hình.
   
   * Precision – Recall thay đổi khi ngưỡng IoU thay đổi. Do đó, tại một giá trị IoU xác định,ta có thể do/đánh giá được mô hình một cách tốt nhất.
 
+### 4.6.2. Kết quả đánh giá
 * Thiết lập các ngưỡng để đánh giá
     * confidence thresh: 0.25
     * iou thresh: 0.5
@@ -471,7 +492,7 @@
 <p align="center">
 <img src="images/res_yolov4.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/>
 <br>
-<a style="text-align: center">Hình 34. Kết quả đánh giá model YOLOv4</a>
+<a style="text-align: center">Hình 35. Kết quả đánh giá model YOLOv4</a>
 </p>
 
 | Class | AP@0.5 |
@@ -485,7 +506,7 @@
 <p align="center">
 <img src="images/res_yolov5.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
 <br>
-<a style="text-align: center">Hình 35. Kết quả đánh giá model YOLOv5s</a>
+<a style="text-align: center">Hình 36. Kết quả đánh giá model YOLOv5s</a>
 </p>
 
 | Class | AP@0.5 |
@@ -499,7 +520,7 @@
 <p align="center">
 <img src="images/fasterrcnn_res.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
 <br>
-<a style="text-align: center">Hình 36. Kết quả đánh giá model Faster RCNN</a>
+<a style="text-align: center">Hình 37. Kết quả đánh giá model Faster RCNN (AP per-category là AP0.5)</a>
 </p>
 
 | Class | AP@0.5 |
@@ -519,37 +540,27 @@
     
 🠊 Khi đánh giá bằng điểm AP@0.5, đối với class 0 model YOLOv4 cho kết quả cao nhất. Đối với 3 class còn lại, Faster RCNN đều cho kết quả tốt hơn
 
+* Số lượng sai sót của mỗi class:
+
+<p align="center">
+<img src="images/ground-truth-info.png" style="display: block;margin-left: auto;margin-right: auto; width: 40%;"/>
+<br>
+<a style="text-align: center">Hình 38. Ground truth</a>
+</p>
+
 <p align="center">
 <img src="images/results_pre.png" style="display: block;margin-left: auto;margin-right: auto;"/>
 <br>
-<a style="text-align: center">Hình 37. Detection result</a>
+<a style="text-align: center">Hình 39. Detection result</a>
 </p>
 
-### Số lượng sai sót của mỗi class:
-* Qua hình ta có thể thấy được số lượng sai sót mỗi thông qua việc đánh giá bằng AP@50
-
-| Model | Class| True Positive | False Positive |
-| :----: | :-----: | :------: | :-----: |
-| YOLOv4 | class0 | 217 | 5 |
-|        | class1 | 60 | 7 |
-|        | class2 | 250 | 44 |
-|        | class3 | 187 | 25 |
-| YOLOv5 | class0 | 217 | 17 |
-|        | class1 | 63 | 26 |
-|        | class2 | 257 | 57|
-|        | class3 | 188 | 25 |
-| FasterRCNN | class0 | 217 | 5 |
-|            | class1 | 63 | 5 |
-|            | class2 | 258 | 14 |
-|            | class3 | 186 | 4 |
-
-* Qua bảng thông kê trên ta có thể thấy model FasterRCNN có số lượng False Positive thấp nhất và số lượng False Positive của model YOLOv5 cao nhất điều đó đòng nghĩa với việc model YOLOv5 có nhiều sai sót hơn 2 model còn lại.
+🠊 Qua các biểu đồ thông kê trên ta có thể thấy rằng số lượng các True Positive được model tìm thấy khá cao và gần bằng so với ground truth. Ở model YOLOv4 và model YOLOv5 có nhiều các False Positive được tìm ra.
 
 | Model | Precision | Recall | mAP@0.5 |
 | :---: | --- | --- | --- |
 | YOLOv4 | 0.900 | 0.98 | 0.989 |
-| YOLOv5s | 0.988 | <ins>0.99</ins> | 0.993 |
-| Faster-RCNN | <ins>0.996 </ins> | 0.997 | <ins>0.996</ins> |
+| YOLOv5s | 0.988 | 0.99 | 0.993 |
+| Faster-RCNN | <ins>0.996 </ins> | <ins>0.997<ins> | <ins>0.996</ins> |
 
 🠊 Khi đánh giá bằng mAP@0.5 cả 3 model đều cho kết quả rất tốt. Faster RCNN cho kết quả tốt nhất.
 
@@ -564,7 +575,7 @@
 <p align="center">
 <img src="images/1.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 38. Kết quả test</a>
+<a style="text-align: center">Hình 40. Kết quả test</a>
 </p>
 
     Model YOLOv4 và YOLOv5 detect sai 1 phần lá bị bệnh đốm rong ở góc trên bên trái
@@ -572,7 +583,7 @@
 <p align="center">
 <img src="images/2.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 39. Kết quả test</a>
+<a style="text-align: center">Hình 41. Kết quả test</a>
 </p>
 
     YOLOv5 detect sai loại bệnh (Ground truth là nấm rỉ sắt - Predict đốm rong)
@@ -580,7 +591,7 @@
 <p align="center">
 <img src="images/3.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 40. Kết quả test</a>
+<a style="text-align: center">Hình 42. Kết quả test</a>
 </p>
 
     YOLOv5 detect 1 lá bình thường ở góc trên thành bệnh sâu vẽ bùa
@@ -588,7 +599,7 @@
 <p align="center">
 <img src="images/4.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 41. Kết quả test</a>
+<a style="text-align: center">Hình 43. Kết quả test</a>
 </p>
 
     Cả ba model đều cho kết quả chính xác khi detect được 2 lá bị bệnh.
@@ -596,7 +607,7 @@
 <p align="center">
 <img src="images/5.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
-<a style="text-align: center">Hình 42. Kết quả test</a>
+<a style="text-align: center">Hình 44. Kết quả test</a>
 </p>
 
     YOLOv4 cho kết quả chính xác, Faster RCNN và YOLOv5 detect sai 1 là bình thường ở bên trái thành bệnh sâu vẽ bùa
@@ -604,7 +615,7 @@
 * Nhìn chung kết quả thử nghiệm đều khá tốt.
     * Một số lá bình thường bị detect nhầm thành bệnh sâu vẽ bùa và nấm rỉ sắt do 1 số ảnh trong tập train bệnh còn nhẹ và khá giống với lá bình thường
     * Một số lá bị nấm rỉ sắt nhìn khá giống với bệnh đốm rong làm cho model bị nhầm lẫn.
-    * YOLOv4 và YOLOv5 đều có những trường hợp detect ra 1 phần lá bị bệnh. Trường hợp này xảy ra nhiều hơn đối với model YOLOv5 
+    * YOLOv4 và YOLOv5 đều có những trường hợp detect ra 1 phần lá bị bệnh (đối tượng không đủ từ cuốn đến chóp lá). Trường hợp này xảy ra nhiều hơn đối với model YOLOv5 
 ## Chướng 5. Ứng dụng và hướng phát triển:
 
 ### Ứng dụng:
@@ -615,3 +626,10 @@
 * Thu thập thêm nhiều dữ liệu về các loại bệnh nhằm giúp ứng dụng phát hiện được nhiều loại bệnh và chính xác hơn.
 * Có thể hướng tới việc phát hiện các loại bệnh trên nhiều loại lá cây nông nghiệp khác nhau dựa trên các đặc điểm giống nhau của các loại bệnh khi xuất hiện trên lá.
 
+## Chương 6. Demo:
+<p align="center">
+    <img src="images/demo.png" style="height:70%;width:70%"><br>
+    <a style="text-align: center">Hình 45. Demo</a>
+</p>
+
+* Source code : [https://github.com/danhhuynh25029/CS114.M11/tree/main/finalProject/app](https://github.com/danhhuynh25029/CS114.M11/tree/main/finalProject/app)

@@ -1,0 +1,2 @@
+Flask==2.0.2
+opencv_python==4.5.5.62

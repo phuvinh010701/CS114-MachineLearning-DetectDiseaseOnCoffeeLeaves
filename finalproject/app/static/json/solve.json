@@ -1,0 +1,27 @@
+{
+	"0" :{
+		"name" : "Sâu vẽ bùa",
+		"treatment" : ["Trigard 100SL","Vertimect 1.8EC"],
+		"guide" : "Cách dùng: pha 20ml/bình 16 lít, phun 4 bình/1000.m2, hoặc 30ml/bình 25 lít, phun 2,5-5 bình/1000m2. Phun khi thấy sâu xuất hiện",
+		"image" : ["./static/medicine/TRIGARD.jpg","./static/medicine/VERTIMEC.jpg"]
+	},
+	"1" : {
+		"name" : "Phấn trắng",
+		"treatment" : ["Anvil", "Aviso 350SC"],
+		"guide" : "1 gói Anvil 20ml + chế phẩm thảo dược thần điền từ 30 – 40ml pha với 15L nước. Phun 1 tuần 2 lần trong vòng 20 ngày rồi chuyển sang phun phòng 1 tháng 2 lần.",
+		"image" : ["./static/medicine/ANVIL.jpg","./static/medicine/AVISO.jpg"]
+		
+	},
+	"2":{
+		"name" : "Nấm rỉ sắt",
+		"treatment" : ["MANCOZEB", "NATIVO 750WG"],
+		"guide" : "Tưới vào gốc 5 lít dung dịch thuốc/ nọc tiêu hoặc gốc cà phê. + Phun qua lá: Pha 40-50 g/ 10 lít nước. Phun khi bệnh chớm xuất hiện. Lượng nước phun 400-500 lít/ ha.",
+		"image" : ["./static/medicine/MANCOZEB.jpg","./static/medicine/NATIVO.jpg"]
+	},
+	"3":{
+		"name" : "Đốm rong",
+		"treatment" : ["Coc 85", "Kocide"],
+		"guide" : " Pha 10-20gr cho bình 8L. Phun 400-600L/ha.Phun phòng ngừa và trị khi bệnh mới xuất hiện, nếu bệnh hại nặng nên phun lại lần 2 sau 7 ngày",
+		"image" : ["./static/medicine/COC.jpg","./static/medicine/KOCIDE.jpg"]
+	}
+}

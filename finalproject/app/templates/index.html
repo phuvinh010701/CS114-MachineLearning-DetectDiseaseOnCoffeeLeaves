@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+            <form action="detect" method="POST" enctype="multipart/form-data">
+                <input type="file" id="img" name="img" onchange="readPath(event)">
+                <!-- <input type="submit" value="Detect"> -->
+                <button type="button" class="btn btn-primary" onclick="sendImage()">Detect</button>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="text-center">
+                <img src="static/images/img-500x500.jpg" class="img-thumbnail" style="width: 500px !important; height: 500px !important;" id="input">
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="text-center">
+                <img src="static/images/img-500x500.jpg"  class="img-thumbnail" style="width: 500px !important; height: 500px !important;" id="output">
+            </div>
+        </div>
+    
+    </div>
+    <div class="row">
+         <div id="table">
+             
+         </div>   
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="static/js/main.js"></script>
+<script>
+
+</script>
+</html>
