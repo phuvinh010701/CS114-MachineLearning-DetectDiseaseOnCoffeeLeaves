@@ -588,5 +588,3 @@ da
     <img src="finalproject/images/demo.png" style="height:70%;width:70%"><br>
     <a style="text-align: center">Hình 45. Demo</a>
 </p>
-
-* Source code : [https://github.com/danhhuynh25029/CS114.M11/tree/main/finalProject/app](https://github.com/danhhuynh25029/CS114.M11/tree/main/finalProject/app)
