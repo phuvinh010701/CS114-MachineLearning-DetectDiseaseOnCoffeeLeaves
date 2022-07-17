@@ -21,7 +21,6 @@
 <!-- ### Thông tin liên hệ -->
 | STT | MSSV | Họ tên | Gmail |
 |:--- | :-------|:----------|:------------|
-
 |19522524|Nguyễn Phú Vinh| 19522524@gm.uit.edu.vn|
 
 
