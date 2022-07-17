@@ -39,7 +39,7 @@
     * Hiện nay, cà phê là một trong những loại thức uống được sử dụng phổ biến lẫn trong và ngoài nước. Cà phê được sản xuất từ những hạt cà phê rang, lấy trên cây cà phê.
 
     <p align="center">
-    <img src="images/caphe.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+    <img src="finalproject/images/caphe.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
     <br>
     <a style="text-align: center">Hình 1. Ảnh minh họa (Nguồn: Internet).</a>
     </p>
@@ -47,7 +47,7 @@
     * Theo báo điện tử VTV, trên 90% tổng sản lượng cà phê của Việt Nam dành cho việc xuất khẩu, khoảng 10% còn lại là dành cho việc chế biến và tiêu thụ trong nước. Cà phê nằm trong nhóm hàng nông sản xuất khẩu chủ lực của Việt Nam, hiện đứng thứ 2 thế giới (chỉ sau Brazil). Tính chung cả năm 2021, xuất khẩu cà phê của Việt Nam đạt 1,52 triệu tấn.
 
     <p align="center">
-    <img src="images/bieudoxuatkhau.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+    <img src="finalproject/images/bieudoxuatkhau.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
     <br>
     <a style="text-align: center">Hình 2. Lượng cà phê xuất khẩu qua các tháng giai đoạn từ 2019-2021.</a>
     </p>
@@ -63,7 +63,7 @@
         * Một tấm ảnh chụp hình lá của cây cà phê đang bị bệnh.
 
         <p align="center">
-        <img src="images/viduinput.JPG" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+        <img src="finalproject/images/viduinput.JPG" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
         <br>
         <a style="text-align: center">Hình 3. Ví dụ về ảnh input thích hợp.</a>
         </p>
@@ -83,7 +83,7 @@
 ## 1.2. Mô tả dữ liệu
 * Dữ liệu của bài toán đươc nhóm tự thu thập từ mốt số vườn chuyên trồng cà phê trên địa bàn huyện Lạc Dương và địa bàn thành phố Đà Lạt thuộc tỉnh Lâm Đồng. Trong quá trình thu thập dữ liệu, nhóm gặp nhiều khó khăn như việc di chuyển đến các vườn cà phê khá xa so với nhà riêng (khoảng hơn 20 km), dịch bệnh COVID-19 khiến cho việc đi qua các chốt phong tỏa khó khăn.
     <p align="center">
-    <img src="images/vuoncaphetramhanh.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <img src="finalproject/images/vuoncaphetramhanh.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
     <br>
     <a style="text-align: center">Hình 4. Vườn cà phê thuộc xã Trạm Hành, thành phố Đà Lạt, tỉnh Lâm Đồng.</a>
     </p>
@@ -101,7 +101,7 @@
     * YOLO được xem là phương pháp đầu tiên xử lý dữ liệu theo thời gian thực và vẫn đạt được độ chính xác cao.
 * Một số kết quả nghiên cứu được đánh giá trên tập COCO. COCO (Common Objects in Context) là một tập datasets phục vụ cho các bài toán Object Detection, Segmentation, Image Captioning. Tập dữ liệu tổng cộng có khoảng 1.5 triệu object thuộc về 80 class khác nhau.
     <p align="center">
-    <img src="images/perfomance_of_coco.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <img src="finalproject/images/perfomance_of_coco.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
     <br>
     <a style="text-align: center">Hình 5. Perfomance trên tập COCO.</a>
     </p>
@@ -113,7 +113,7 @@
 * Mỗi tấm ảnh gốc có kích thước 3024 x 4032 (camera nằm ngang), 4032 x 3024 (camera nằm dọc)
 
     <p align="center">
-    <img src="images/details_image.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+    <img src="finalproject/images/details_image.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
     <br>
     <a style="text-align: center">Hình 6. Độ phân giải và camera sử dụng.</a>
     </p>
@@ -147,14 +147,14 @@
 
 * Sử dụng công cụ labelImg để tiến hành gán nhãn toàn bộ dữ liệu
     <p align="center">
-    <img src="images/label.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/>
+    <img src="finalproject/images/label.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;"/>
     <br>
     <a style="text-align: center">Hình 7. Công cụ labelImg.</a>
     </p>
 
 * Sử dụng thao tác kéo thả chuột để tạo bouding box cho đối tượng. Label được lưu thành file text có cùng tên với ảnh dưới dạng YOLO format.
         <p align="center">
-        <img src="images/yoloformat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+        <img src="finalproject/images/yoloformat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
         <br>
         <a style="text-align: center">Hình 8. Ảnh, label và label format của YOLO.</a>
         </p>
@@ -168,7 +168,7 @@
 * Những lá bị sâu vẽ bùa gây hại sẽ bị co lại, biến dạng. Sâu non chui qua lớp biểu bì của lá để ăn phần nhu mô của lá tạo thành đường hầm ngoằn ngoèo màu trắng, trắng đục dưới lớp biểu bì.
     
 <p align="center">
-<img src="images/vidusauvebua.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<img src="finalproject/images/vidusauvebua.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
 <br>
 <a style="text-align: center">Hình 9. Một số ví dụ về bệnh sâu vẽ bùa trên lá cà phê.</a>
 </p>
@@ -178,7 +178,7 @@
 * Bệnh phấn trắng do một số loại nấm có họ hàng gần gây ra. Triệu chứng chung là chúng tạo ra lớp bột có màu trắng xám trên bề mặt của lá.
     
 <p align="center">
-<img src="images/viduphantrang.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<img src="finalproject/images/viduphantrang.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
 <br>
 <a style="text-align: center">Hình 10. Một số ví dụ về bệnh phấn trắng trên lá cà phê.</a>
 </p>
@@ -188,7 +188,7 @@
 * Trên lá xuất hiện các vết đốm hình tròn màu nâu cam hơi đỏ (giống rỉ sắt), xung quanh có vầng màu vàng úa.
     
 <p align="center">
-<img src="images/vidurisat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<img src="finalproject/images/vidurisat.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
 <br>
 <a style="text-align: center">Hình 11. Một số ví dụ về bệnh nấm rỉ sắt trên lá cà phê.</a>
 </p>
@@ -198,7 +198,7 @@
 *  Đốm bệnh có hình tròn lúc đầu nhỏ khoảng 3 - 5 mm, hơi nhô lên trên mặt lá do rong phát triển thành ung mịn, màu hơi vàng.
     
 <p align="center">
-<img src="images/vidudomrong.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<img src="finalproject/images/vidudomrong.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
 <br>
 <a style="text-align: center">Hình 12. Một số ví dụ về bệnh đốm rong trên lá cà phê.</a>
 </p>
@@ -208,7 +208,7 @@
 * Tổng số object là: 4092
 
 <p align="center">
-<img src="images/Figure_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<img src="finalproject/images/Figure_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
 <br>
 <a style="text-align: center">Hình 13. Số lượng object thuộc từng loại label.</a>
 </p>
@@ -217,7 +217,7 @@
 * Số ảnh có nhiều hơn 1 object là: 246
 
 <p align="center">
-<img src="images/Figure_count.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
+<img src="finalproject/images/Figure_count.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%; height:50%;"/>
 <br>
 <a style="text-align: center">Hình 14. Số lượng ảnh có 1 object và nhiều object.</a>
 </p>
@@ -226,12 +226,12 @@
 
 * Tập dữ liệu được chia thành hai tập train và test với tỉ lệ là 80% cho tập train và 20% cho tập test
 <p align="center">
-<img src="images/train.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="finalproject/images/train.png" style="display: block;margin-left: auto;margin-right: auto;"/>
 <br>
 <a style="text-align: center">Hình 15. Số lượng object thuộc từng loại label trong tập train.</a>
 </p>
 <p align="center">
-<img src="images/test.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="finalproject/images/test.png" style="display: block;margin-left: auto;margin-right: auto;"/>
 <br>
 <a style="text-align: center">Hình 16. Số lượng object thuộc từng loại label trong tập test.</a>
 </p>
@@ -250,7 +250,7 @@ Trong đó: <br>
     * Trong đó \<object-class> là số nguyên trong đoạn [0, 3]
     * \<x> \<y> \<width> \<height> là các số thực được chuẩn hóa có giá trị nằm trong đoạn [0, 1], biểu diễn bouding box của đối tượng.
     <p align="center">
-    <img src="images/yoloformat.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
+    <img src="finalproject/images/yoloformat.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
     <br>
     <a style="text-align: center">Hình 17. Cách tính các giá trị x, y, width, height.</a>
     </p>
@@ -261,13 +261,13 @@ Trong đó: <br>
 Để train model nhóm sử dụng tài nguyên của Google Colab với thiết lập runtime type là GPU
 da
 <p align="center">
-<img src="images/runtime.png" style="display: block;margin-left: auto;margin-right: auto; width: 30%; height:30%"/>
+<img src="finalproject/images/runtime.png" style="display: block;margin-left: auto;margin-right: auto; width: 30%; height:30%"/>
 <br>
 <a style="text-align: center">Hình 18. Bật GPU trên Google Colab.</a>
 </p>
 
 <p align="center">
-<img src="images/cauhinhtrain.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%"/>
+<img src="finalproject/images/cauhinhtrain.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 50%"/>
 <br>
 <a style="text-align: center">Hình 19. Cấu hình dùng để train và test.</a>
 </p>
@@ -277,7 +277,7 @@ da
 ### 4.3.1. Sơ lược về YOLOv4
 
 <p align="center">
-<img src="images/yolov4_archi.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
+<img src="finalproject/images/yolov4_archi.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
 <a style="text-align: center">Hình 20. Cấu trúc mô hình YOLOv4.</a>
 </p>
@@ -287,7 +287,7 @@ da
 * YOLOv4 là một loạt các cải tiến về tốc độ so với YOLOv3 và được cài đặt từ một bản fork của Darknet. Kiến trúc của YOLOv4 đã đưa bài toán object detection dễ tiếp cận hơn với những người không có tài nguyên tính toán mạnh.
 
 <p align="center">
-<img src="images/yolov4_compare.jpeg" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
+<img src="finalproject/images/yolov4_compare.jpeg" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
 <a style="text-align: center">Hình 21. So sánh YOLOv4 với các mô hình khác.</a>
 </p>
@@ -299,7 +299,7 @@ da
 
 * Nhóm sử dụng darknet repository của tác giả để huấn luyện cho model và thiết lập các thông số trong file Makefile như sau
 <p align="center">
-<img src="images/configmakefile.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
+<img src="finalproject/images/configmakefile.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
 <a style="text-align: center">Hình 22. Thiết lập các thông số Makefile để sử dụng GPU.</a>
 </p>
@@ -328,13 +328,13 @@ da
 * Không lâu sau khi YOLOv4 được phát hành chính thức thì 1 phiên bản khác của YOLO xuất hiện là YOLOv5 sử dụng frame work Pytorch. YOLOv5 được giới thiệu bởi Glenn Jocher vào ngày 18/5/2020, YOLOv5 có mã nguồn mở ở [Github](https://github.com/ultralytics/yolov5). Với những số liệu của tác giả cung cấp thì mô hình này khá triển vọng. Tuy nhiên YOLOv5 hiện vẫn chưa có paper chính thức.
 
 <p align="center">
-<img src="images/yolov5_coco.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
+<img src="finalproject/images/yolov5_coco.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
 <a style="text-align: center">Hình 27. Perfomance của các phiên bản YOLOv5 trên tập COCO</a>
 </p>
 
 <p align="center">
-<img src="images/pre_check.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
+<img src="finalproject/images/pre_check.png" style="display: block;margin-left: auto;margin-right: auto; width: 75%"/>
 <br>
 <a style="text-align: center">Hình 28. Kết quả đánh giá trên tập COCO</a>
 </p>
@@ -344,7 +344,7 @@ da
 ### 4.4.2. Thiết lập training
 * Tạo file data.yaml có nội dung như sau
 <p align="center">
-<img src="images/data_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
+<img src="finalproject/images/data_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
 <br>
 <a style="text-align: center">Hình 29. File data.yaml</a>
 </p>
@@ -368,7 +368,7 @@ da
 * Quá trình training khá lâu vượt qua thời gian cho phép của Google Colab nên ở những lần train tiếp theo nhóm tiến hành train tiếp trên file trọng số mới nhất
 * Vào epoch 450 thì xuất hiện thông báo dừng train model như sau:
 <p align="center">
-<img src="images/stopping.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
+<img src="finalproject/images/stopping.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 100%;"/>
 <br>
 <a style="text-align: center">Hình 30. Early stopping YOLOv5</a>
 </p>
@@ -384,7 +384,7 @@ da
 * Region Proposal Netwok là một mạng Convolutional Neural Network(CNN) có chức năng để tìm ra các vùng có khả năng chứa đối tượng thường dược gọi là region proposal
 * Fast-RCNN là một mạng CNN dùng để trích xuất các features từ các region proposal và trả ra các bounding box cùng với label cho từng cái bounding box đó.
 <p align="center">
-  <img src="images/faster.png" />
+  <img src="finalproject/images/faster.png" />
 </p>
 <p align="center">Hình 31. Cấu trúc Faster RCNN</p>
 
@@ -392,7 +392,7 @@ da
 * Nhóm sử dụn detectron2 một thư viện của Facebook AI Research để tiến hành huấn luyện cho Faster RCNN. Nhóm đã sử dụng file pretrained weights X-101-32x8d.pkl để tiếp tục train cho model của mình.
 
 <p align="center">
-  <img src="images/faster_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/> 
+  <img src="finalproject/images/faster_yaml.png" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/> 
 </p>
 <p align="center">Hình 32. File pretrained được sử dụng </p>
 
@@ -411,7 +411,7 @@ da
 * Để đánh giá model thì nhóm sử dụng mean average precision để đánh giá model. Trước tiên để hiểu được mean average là gì thì trước tiên chúng tôi sẽ giới thiệu một số khái niệm cơ bản.
 * IOU là tỷ lệ giữa phần giao của bounding box dự đoán vói ground truth(vùng đối tượng thật mà chúng tôi label) và phần hợp của chúng.
 <p align="center">
-  <img src="images/ctiou.png" width="500" height="400">
+  <img src="finalproject/images/ctiou.png" width="500" height="400">
 </p>
 <p align="center">Hình 33. Độ đo IOU </p>
 
@@ -428,7 +428,7 @@ da
 * Nêu có nhiều predicted bounding box xếp chồng lên nhau trong cùng một ground truth thì ta sẽ chọn predicted bounding box nào có IOU lớn hơn ngưỡng cao nhất là True Positive, còn lại là False Positive.
 
 <p align="center">
-  <img src="images/AP.jpg" width="500" height="400">
+  <img src="finalproject/images/AP.jpg" width="500" height="400">
 </p>
 <p align="center">Hình 34. AP </p>
 
@@ -447,7 +447,7 @@ da
     * iou thresh: 0.5
 * YOLOv4
 <p align="center">
-<img src="images/res_yolov4.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/>
+<img src="finalproject/images/res_yolov4.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 50%;"/>
 <br>
 <a style="text-align: center">Hình 35. Kết quả đánh giá model YOLOv4</a>
 </p>
@@ -461,7 +461,7 @@ da
 
 * YOLOv5
 <p align="center">
-<img src="images/res_yolov5.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
+<img src="finalproject/images/res_yolov5.png" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
 <br>
 <a style="text-align: center">Hình 36. Kết quả đánh giá model YOLOv5s</a>
 </p>
@@ -475,7 +475,7 @@ da
 
 * Faster RCNN
 <p align="center">
-<img src="images/fasterrcnn_res.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
+<img src="finalproject/images/fasterrcnn_res.jpg" style="display: block;margin-left: auto;margin-right: auto; width: 70%;"/>
 <br>
 <a style="text-align: center">Hình 37. Kết quả đánh giá model Faster RCNN (AP per-category là AP0.5)</a>
 </p>
@@ -500,13 +500,13 @@ da
 * Số lượng sai sót của mỗi class:
 
 <p align="center">
-<img src="images/ground-truth-info.png" style="display: block;margin-left: auto;margin-right: auto; width: 40%;"/>
+<img src="finalproject/images/ground-truth-info.png" style="display: block;margin-left: auto;margin-right: auto; width: 40%;"/>
 <br>
 <a style="text-align: center">Hình 38. Ground truth</a>
 </p>
 
 <p align="center">
-<img src="images/results_pre.png" style="display: block;margin-left: auto;margin-right: auto;"/>
+<img src="finalproject/images/results_pre.png" style="display: block;margin-left: auto;margin-right: auto;"/>
 <br>
 <a style="text-align: center">Hình 39. Detection result</a>
 </p>
@@ -530,7 +530,7 @@ da
 🠊 Khi thử nghiệm trên cùng một cấu hình, mặc dù Faster RCNN cho kết quả mAP@0.5 tốt nhất nhưng cũng tốn thời gian nhiều nhất so với 2 model còn lại.
 * Một số hình ảnh test
 <p align="center">
-<img src="images/1.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
+<img src="finalproject/images/1.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
 <a style="text-align: center">Hình 40. Kết quả test</a>
 </p>
@@ -538,7 +538,7 @@ da
     Model YOLOv4 và YOLOv5 detect sai 1 phần lá bị bệnh đốm rong ở góc trên bên trái
 
 <p align="center">
-<img src="images/2.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
+<img src="finalproject/images/2.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
 <a style="text-align: center">Hình 41. Kết quả test</a>
 </p>
@@ -546,7 +546,7 @@ da
     YOLOv5 detect sai loại bệnh (Ground truth là nấm rỉ sắt - Predict đốm rong)
 
 <p align="center">
-<img src="images/3.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
+<img src="finalproject/images/3.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
 <a style="text-align: center">Hình 42. Kết quả test</a>
 </p>
@@ -554,7 +554,7 @@ da
     YOLOv5 detect 1 lá bình thường ở góc trên thành bệnh sâu vẽ bùa
 
 <p align="center">
-<img src="images/4.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
+<img src="finalproject/images/4.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
 <a style="text-align: center">Hình 43. Kết quả test</a>
 </p>
@@ -562,7 +562,7 @@ da
     Cả ba model đều cho kết quả chính xác khi detect được 2 lá bị bệnh.
 
 <p align="center">
-<img src="images/5.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
+<img src="finalproject/images/5.png" style="display: block;margin-left: auto;margin-right: auto; width: 120%;"/>
 <br>
 <a style="text-align: center">Hình 44. Kết quả test</a>
 </p>
@@ -585,7 +585,7 @@ da
 
 ## Chương 6. Demo:
 <p align="center">
-    <img src="images/demo.png" style="height:70%;width:70%"><br>
+    <img src="finalproject/images/demo.png" style="height:70%;width:70%"><br>
     <a style="text-align: center">Hình 45. Demo</a>
 </p>
 
