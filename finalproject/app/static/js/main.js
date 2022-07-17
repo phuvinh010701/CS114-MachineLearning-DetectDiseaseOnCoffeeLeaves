@@ -28,7 +28,7 @@ function readPath(event){
                         tb =  tb  + `<tr>
                             <td>${v}</td>
                             <td>${res_json[v]["name"]}</td>
-                            <td><image with="300" height="200" src=${res_json[v]["image"]}/></td>
+                            <td><image with="300" height="200" src=${res_json[v]["image"]} style='display: block;margin: 0 auto;'/></td>
                             <td>${res_json[v]["treatment"][0]}</td>
                             <td>${res_json[v]["guide"]}</td>
                         </tr>`;
@@ -40,13 +40,13 @@ function readPath(event){
                 <table class="table">
                 <thead>
                     <tr>
-                      <th scope="col">#</th>
+                      <th scope="col">STT</th>
                       <th scope="col">Tên loại bệnh</th>
                       <th scope ="col">Hình thuốc</th>
                       <th scope="col">Tên thuốc</th>
                       <th scope="col">Cách dùng</th>
                     </tr>
-                      </thead>
+                </thead>
                       <tbody>
                         ${tb}
                       </tbody>

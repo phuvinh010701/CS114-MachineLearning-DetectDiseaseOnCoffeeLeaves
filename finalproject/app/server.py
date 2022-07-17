@@ -6,7 +6,7 @@ import cv2
 import random
 import json
 app = Flask(__name__,static_url_path='/static')
-with open('static/json/solve.json') as json_file:
+with open('static/json/solve.json', encoding='utf-8') as json_file:
     solve = json.load(json_file)
 
 class YoloV4:
@@ -69,6 +69,7 @@ def detect():
         imgPath =   "./static/images/" + imgFile.filename
         imgFile.save(imgPath)
         classIds,path = m.predict(imgPath)
+        classIds = list(set(classIds))
         res = '{'
         for i in range(0,len(classIds)):
             tmp = '{' + '"name":' + '"' +solve[str(classIds[i])]["name"] + '"' + ',' +'"treatment":'+'["'+ solve[str(classIds[i])]["treatment"][0] +'","' + solve[str(classIds[i])]["treatment"][1]+ '"]'
