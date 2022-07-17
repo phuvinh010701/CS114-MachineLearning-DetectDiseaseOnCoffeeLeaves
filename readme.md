@@ -22,10 +22,9 @@
 | STT | MSSV | Họ tên | Gmail |
 |:--- | :-------|:----------|:------------|
 
-|2|19522524|Nguyễn Phú Vinh| 19522524@gm.uit.edu.vn|
+|19522524|Nguyễn Phú Vinh| 19522524@gm.uit.edu.vn|
 
 
-[2]:https://github.com/phuvinh010701
 
 
 # Chương 1. TỔNG QUAN
