@@ -32,13 +32,6 @@
 [4]:https://www.facebook.com/phuvinh0107
 [5]:https://www.facebook.com/tuanminh.vo.73
 
-# Chương 0. Giải trình chỉnh sửa sau vấn đáp
-## Cách để đánh giá mô hình:
-* Nhóm đã tiến hành cập nhật về đánh giá mô hình và cách xác định True Positive, False Positive sau những góp ý của thầy. Lý do chọn mean average precision là metric để đánh giá. [link](#46-đánh-giá-model)
-## Số lượng số lượng sai sót của mỗi class trong mỗi mô hình:
-* Nhóm tiến hành thống kê True Positive ,False Positive của mỗi class trong mỗi mô hình để tiến hành xác định số lượng. [link](#462-kết-quả-đánh-giá)
-## Định dạng của dataset dùng để tranning model:
-* Nhóm đã tiến hành tìm hiểu và xác định nội dung dataset dùng để trainning model. [link](#41-nội-dung-dataset)
 # Chương 1. TỔNG QUAN
 
 ## 1.1. Mô tả bài toán
@@ -319,42 +312,6 @@ da
     * width = 416, height = 416 (Kích thước của ảnh)
     * classes = 4 (Số class)
     * filters = 27 (Tính theo công thức filters = (classes + 5) * 3) 
-
-* Tạo file train.txt chứa đường dẫn tới các ảnh dùng để train (3138 ảnh)
-<p align="center">
-<img src="images/path_train.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
-<br>
-<a style="text-align: center">Hình 23. File train.txt</a>
-</p>
-
-
-* Tạo file valid.txt chứa đường dẫn tới các ảnh dùng để đánh giá trong quá trình train (687 ảnh)
-<p align="center">
-<img src="images/path_valid.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
-<br>
-<a style="text-align: center">Hình 24. File valid.txt</a>
-</p>
-
-* Tạo file obj.names chứa tên của các class
-<p align="center">
-<img src="images/obj.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
-<br>
-<a style="text-align: center">Hình 25. File obj.names</a>
-</p>
-
-* Tạo file obj.data có nội dung như sau
-<p align="center">
-<img src="images/obj_data.png" style="display: block;margin-left: auto;margin-right: auto; width: 20%; height:20%;"/>
-<br>
-<a style="text-align: center">Hình 26. File obj.data</a>
-</p>
-
-    Trong đó:
-    classes: là số lượng class
-    train: đường dẫn tới file train.txt
-    valid: đường dẫn tới file valid.txt
-    names: đường dẫn tới file obj.names
-    backup: đường dẫn tới folder backup chứa các trọng số được lưu lại trong quá trình train
 
 ### 4.3.3. Train model
 * Tải file trọng số yolov4.conv.137.weights và tiến hành train trên file trọng số này
