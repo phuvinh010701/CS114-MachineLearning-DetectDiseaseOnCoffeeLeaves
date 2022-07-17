@@ -21,16 +21,12 @@
 <!-- ### Thông tin liên hệ -->
 | STT | MSSV | Họ tên | Gmail |
 |:--- | :-------|:----------|:------------|
-|1|19521322|Huỳnh Ngọc Công Danh|19521322@gm.uit.edu.vn|
-|2|19522524|Nguyễn Phú Vinh| 19522524@gm.uit.edu.vn|
-|3|19521858|Võ Tuấn Minh|19521858@gm.uit.edu.vn|
 
-[0]:https://github.com/danhhuynh25029
-[2]:https://github.com/minh1304
-[1]:https://github.com/phuvinh010701
-[3]:https://www.facebook.com/danh250/
-[4]:https://www.facebook.com/phuvinh0107
-[5]:https://www.facebook.com/tuanminh.vo.73
+|2|19522524|Nguyễn Phú Vinh| 19522524@gm.uit.edu.vn|
+
+
+[2]:https://github.com/phuvinh010701
+
 
 # Chương 1. TỔNG QUAN
 
